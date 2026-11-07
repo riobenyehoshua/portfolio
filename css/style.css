@@ -46,6 +46,7 @@ p{margin:0 0 12px}.mut{color:var(--mut)}
 .ico.logo.flush{padding:0;background:transparent}
 .role{display:block;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--accent);margin:-2px 0 12px}
 figure{margin:0}
+img,video{height:auto}
 figure img,figure video{width:100%;display:block;border:1px solid var(--line);box-shadow:0 12px 28px -16px rgba(18,22,28,.35);background:#000}
 figcaption{font-size:13px;color:var(--mut);margin-top:12px}
 ul,ol{margin:0 0 12px;padding-left:22px}li{margin-bottom:6px}
@@ -91,3 +92,44 @@ details.more-data summary{cursor:pointer;font-weight:700;color:var(--accent);mar
 @media(max-width:760px){.card.slim{grid-template-columns:1fr}}
 
 .headshot.photo{border:0;background:none;display:block}.headshot.photo img{width:100%;height:100%;object-fit:cover;display:block;border:1px solid var(--line);box-shadow:8px 8px 0 var(--main)}
+
+/* ---- Intro: what I'm looking for ---- */
+.seek{display:flex;align-items:center;gap:12px;margin:2px 0 0;max-width:600px;color:#e6ebf2;font-weight:600;font-size:16px}
+.seek::before{content:"";flex:none;width:8px;height:8px;background:var(--hl);transform:rotate(45deg);box-shadow:0 0 0 4px rgba(179,171,224,.18)}
+.intro .pills{margin:18px 0 0}
+#contact .lead-c{font-size:18px;max-width:640px}
+
+/* ---- Project "at a glance" strip (inside the dark hero) ---- */
+.facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);margin:0;border-top:1px solid rgba(255,255,255,.16)}
+.facts div{padding:18px 20px 0 0}
+.facts dt{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hl);margin:0 0 6px}
+.facts dd{margin:0;color:#e6ebf2;font-size:14.5px;line-height:1.45}
+@media(max-width:760px){.facts{grid-template-columns:1fr 1fr;gap:0 16px}}
+
+/* ---- Previous / next project ---- */
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:48px 0;border-top:1px solid var(--line)}
+.pager a{display:block;padding:18px 22px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--k,var(--edge));color:var(--ink);box-shadow:0 12px 28px -16px rgba(18,22,28,.28);transition:transform .15s,box-shadow .15s}
+.pager a:hover{transform:translateY(-3px);box-shadow:0 20px 36px -16px rgba(18,22,28,.4);text-decoration:none}
+.pager .lab{display:block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+.pager .ttl{display:block;font-weight:800;font-size:18px;letter-spacing:-.01em}
+.pager .nx{text-align:right}
+@media(max-width:760px){.pager{grid-template-columns:1fr}.pager .nx{text-align:left}}
+
+/* ---- Compact menu on phones ---- */
+.navtoggle{display:none}
+@media(max-width:760px){
+  .nav{flex-wrap:nowrap;padding:14px 0}
+  .navtoggle{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;background:#fff;border:1px solid var(--line);color:var(--ink);font:600 14px/1 Inter,system-ui,sans-serif;cursor:pointer}
+  .navtoggle .bars,.navtoggle .bars::before,.navtoggle .bars::after{display:block;width:16px;height:2px;background:currentColor;position:relative;transition:transform .15s,opacity .15s}
+  .navtoggle .bars::before,.navtoggle .bars::after{content:"";position:absolute;left:0}
+  .navtoggle .bars::before{top:-5px}.navtoggle .bars::after{top:5px}
+  .nav.open .navtoggle .bars{background:transparent}
+  .nav.open .navtoggle .bars::before{transform:translateY(5px) rotate(45deg)}
+  .nav.open .navtoggle .bars::after{transform:translateY(-5px) rotate(-45deg)}
+  .nav .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;padding:6px 0 12px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 22px 30px -22px rgba(18,22,28,.4)}
+  .nav.open .links{display:flex}
+  .nav .links>a,.nav .links .ddt{display:block;padding:11px 0;font-size:16px;color:var(--ink)}
+  .nav .menu{display:block!important;position:static;min-width:0;padding:0 0 4px 12px;border:0;box-shadow:none}
+  .nav .menu a{padding:8px 12px;font-size:15px;color:var(--mut);white-space:normal}
+  .dd .ddt::after,.dd::after{display:none}
+}

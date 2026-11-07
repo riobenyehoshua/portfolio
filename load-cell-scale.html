@@ -11,10 +11,10 @@
 <meta property="og:title" content="Digital Load Cell Scale | Rio Ben-Yehoshua">
 <meta property="og:description" content="A prototype digital scale: a custom enclosure, load cells, an HX711 amplifier, Arduino code and an LCD, with tare and gram/ounce controls.">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><div class="links"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Ping Pong Recirculation System</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-scale" id="p-loadcell"><header class="hero">
+<body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks"><span class="bars" aria-hidden="true"></span>Menu</button><div class="links" id="navlinks"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Ping Pong Recirculation System</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-scale" id="p-loadcell"><header class="hero">
   <div>
     <p class="eb">Team project · ME 104 · Spring 2026</p>
     <h1>Digital Load Cell Scale</h1>
@@ -22,7 +22,8 @@
     <div class="pills"><span class="pill">0.84% full-scale error</span><span class="pill g">4 load cells · Wheatstone bridge</span><span class="pill k">CAD · Arduino · I2C LCD</span></div>
     <p class="mut">By <b>Rio Ben-Yehoshua</b> with Beckie Jiang and Zuhan Jiang · The Cooper Union</p>
   </div>
-  <img src="images/loadcell/hero.jpg" alt="Finished red and black digital scale with LCD and two buttons">
+  <img width="941" height="835" src="images/loadcell/hero.jpg" alt="Finished red and black digital scale with LCD and two buttons">
+  <dl class="facts"><div><dt>My role</dt><dd>Enclosure CAD and the weighing code</dd></div><div><dt>Team</dt><dd>3 students</dd></div><div><dt>Timeline</dt><dd>Apr to May 2026</dd></div><div><dt>Tools</dt><dd>CAD, 3D printing, Arduino, HX711, I2C LCD</dd></div></dl>
 </header>
 <section>
   <p class="eb">Results</p>
@@ -36,7 +37,7 @@
       <div class="card"><div class="big" style="font-size:34px">4535.9 g</div><p class="mut">maximum tested load, capped to protect the printed platform</p></div>
     </div>
   </div>
-  <figure style="margin-top:20px"><img src="images/loadcell/graph.png" alt="Scale reading versus actual weight, a straight line"><figcaption>Scale reading vs. actual weight: a straight line (y = 0.997x − 1.32).</figcaption></figure>
+  <figure style="margin-top:20px"><img width="747" height="462" loading="lazy" decoding="async" src="images/loadcell/graph.png" alt="Scale reading versus actual weight, a straight line"><figcaption>Scale reading vs. actual weight: a straight line (y = 0.997x − 1.32).</figcaption></figure>
   <details class="more-data"><summary>See all ten test masses</summary>
     <table class="tbl"><thead><tr><th>Actual (g)</th><th>Scale (g)</th><th>Error</th></tr></thead><tbody>
       <tr><td>4</td><td>3.9</td><td>2.50%</td></tr><tr><td>44</td><td>43.2</td><td>1.82%</td></tr><tr><td>234</td><td>234.1</td><td>0.04%</td></tr>
@@ -45,7 +46,6 @@
       <tr><td>4526</td><td>4526.7</td><td>0.02%</td></tr></tbody></table>
   </details>
   <p style="margin-top:14px">Percent error was largest at the lowest masses (2.5% at 4 g), as expected when a small difference is divided by a small mass. The reading never fully settled, so each value was recorded at a reasonable stopping point; that drift shows up in the standard deviation.</p>
-  <p class="back"><a href="index.html">Read the full report (PDF)</a></p>
 </section>
 <section>
   <p class="eb">The challenge</p>
@@ -64,13 +64,13 @@
   <h2>Four layers, each with one job</h2>
   <p>The scale separates the weighing platform, the load cell support frame and the electronics into layers. This keeps the electronics protected from movement and load, and keeps the load cells aligned. A front box holds the LCD and buttons.</p>
   <div class="grid g3">
-    <figure><img src="images/loadcell/cad-exploded.png" alt="Exploded CAD view of the scale"><figcaption>Exploded view: platform, support frame, base and front box.</figcaption></figure>
-    <figure><img src="images/loadcell/cad-frame.png" alt="CAD of the load cell support frame"><figcaption>Support frame with four load cell pockets.</figcaption></figure>
-    <figure><img src="images/loadcell/cad-platform.png" alt="CAD of the weighing platform"><figcaption>Weighing platform.</figcaption></figure>
+    <figure><img width="1142" height="755" loading="lazy" decoding="async" src="images/loadcell/cad-exploded.png" alt="Exploded CAD view of the scale"><figcaption>Exploded view: platform, support frame, base and front box.</figcaption></figure>
+    <figure><img width="820" height="745" loading="lazy" decoding="async" src="images/loadcell/cad-frame.png" alt="CAD of the load cell support frame"><figcaption>Support frame with four load cell pockets.</figcaption></figure>
+    <figure><img width="372" height="386" loading="lazy" decoding="async" src="images/loadcell/cad-platform.png" alt="CAD of the weighing platform"><figcaption>Weighing platform.</figcaption></figure>
   </div>
   <div class="grid g2" style="margin-top:16px">
-    <figure><img src="images/loadcell/platform-lifted.jpg" alt="Scale with the platform lifted, showing load cells and wiring"><figcaption>Platform lifted: the four load cells sit underneath.</figcaption></figure>
-    <figure><img src="images/loadcell/inside.jpg" alt="Open scale showing the load cells"><figcaption>Inside the finished enclosure.</figcaption></figure>
+    <figure><img width="1030" height="1039" loading="lazy" decoding="async" src="images/loadcell/platform-lifted.jpg" alt="Scale with the platform lifted, showing load cells and wiring"><figcaption>Platform lifted: the four load cells sit underneath.</figcaption></figure>
+    <figure><img width="1069" height="1278" loading="lazy" decoding="async" src="images/loadcell/inside.jpg" alt="Open scale showing the load cells"><figcaption>Inside the finished enclosure.</figcaption></figure>
   </div>
 </section>
 <section>
@@ -83,7 +83,7 @@
       <li><b>Calculate.</b> The Arduino applies a calibration factor to get mass in grams.</li>
       <li><b>Display.</b> The LCD shows grams or ounces over I2C, and the serial monitor prints each reading.</li>
     </ol>
-    <figure><img src="images/loadcell/wiring.jpg" alt="Arduino, HX711 and wiring inside the scale base"><figcaption>The Arduino, HX711 and wiring inside the base.</figcaption></figure>
+    <figure><img width="1280" height="1707" loading="lazy" decoding="async" src="images/loadcell/wiring.jpg" alt="Arduino, HX711 and wiring inside the scale base"><figcaption>The Arduino, HX711 and wiring inside the base.</figcaption></figure>
   </div>
 </section>
 <section>
@@ -95,8 +95,8 @@
     <li>Implemented signal averaging, tare/reset, unit switching and debounce logic, plus a zero-threshold filter</li>
   </ul>
   <div class="grid g2" style="margin-top:16px">
-    <figure><img src="images/loadcell/side.jpg" alt="Side view of the scale"><figcaption>Side view: platform above the electronics bay.</figcaption></figure>
-    <figure><img src="images/loadcell/angled.jpg" alt="Angled view of the scale"><figcaption>Angled view with the display and controls.</figcaption></figure>
+    <figure><img width="1200" height="720" loading="lazy" decoding="async" src="images/loadcell/side.jpg" alt="Side view of the scale"><figcaption>Side view: platform above the electronics bay.</figcaption></figure>
+    <figure><img width="1059" height="635" loading="lazy" decoding="async" src="images/loadcell/angled.jpg" alt="Angled view of the scale"><figcaption>Angled view with the display and controls.</figcaption></figure>
   </div>
 </section>
 <section>
@@ -117,11 +117,12 @@
     <li>Track down the source of the reading drift, which the report attributes to signal interference or load cell sensitivity.</li>
   </ul>
 </section>
+<nav class="pager" aria-label="More projects"><a href="index.html#projects"><span class="lab">← Back</span><span class="ttl">All projects</span></a><a class="nx" href="plantplex.html" style="--k:var(--c3)"><span class="lab">Next project →</span><span class="ttl">PlantPlex</span></a></nav>
 <section>
   <h2>Get in touch</h2>
-  <p><a href="mailto:rio.benyehoshua@cooper.edu">rio.benyehoshua@cooper.edu</a> · <a href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a> · <a href="index.html">Resume (PDF)</a></p>
-  <p class="back"><a href="index.html">← Back to portfolio</a></p>
+  <p><a href="mailto:rio.benyehoshua@cooper.edu">rio.benyehoshua@cooper.edu</a> · <a href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a> · <a href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
 </section>
 </div></div>
+<script src="js/site.js" defer></script>
 </body>
 </html>
