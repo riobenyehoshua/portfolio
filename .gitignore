@@ -9,3 +9,6 @@ Thumbs.db
 
 # Local tool environment
 tools/.venv/
+
+# Private checklist
+TODO.md

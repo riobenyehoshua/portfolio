@@ -145,3 +145,7 @@ details.more-data summary{cursor:pointer;font-weight:700;color:var(--accent);mar
 .thumbs a{display:block}.thumbs a:hover img,.thumbs a:hover video{filter:brightness(1.06)}
 .thumbs figcaption{font-size:12px;margin-top:6px;line-height:1.35}
 @media(max-width:760px){.shop{grid-template-columns:1fr}.thumbs.t4{grid-template-columns:repeat(2,1fr)}}
+
+/* ---- Cropped photos: add class "crop" to a grid/row; choose the focus per photo with
+   style="object-position: X% Y%" (0% = top/left edge, 100% = bottom/right edge) ---- */
+.crop figure img{aspect-ratio:4/5;object-fit:cover}

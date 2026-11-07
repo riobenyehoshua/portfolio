@@ -21,6 +21,9 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
   Rio edits it in Google Docs. Publish it only via `tools\update-resume.cmd`, which strips phone numbers
   (`tools/strip_phone.py`, PyMuPDF in the gitignored `tools/.venv`). Rio's phone number must never be published.
 
+- `TODO.md` (gitignored, private) is Rio's checklist of things to add later. Read it at the start of a session;
+  when Rio says "later" about something, add it there, and tick items off when they're done.
+
 ## Conventions
 - Ask Rio before any big design change (layout, colors, fonts). Wording and small fixes are fine.
 - Don't invent facts (dates, numbers, roles). Sources of truth: resume PDF and the reports in `source/reports/`.
