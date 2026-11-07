@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Digital Load Cell Scale | Rio Ben-Yehoshua</title>
+<meta name="description" content="A prototype digital scale: a custom enclosure, load cells, an HX711 amplifier, Arduino code and an LCD, with tare and gram/ounce controls.">
+<meta name="theme-color" content="#12161c">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rio Ben-Yehoshua">
+<meta property="og:title" content="Digital Load Cell Scale | Rio Ben-Yehoshua">
+<meta property="og:description" content="A prototype digital scale: a custom enclosure, load cells, an HX711 amplifier, Arduino code and an LCD, with tare and gram/ounce controls.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><div class="links"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Angry Birds Ping Pong</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-scale" id="p-loadcell"><header class="hero">
+  <div>
+    <p class="eb">Team project · ME 104 · Spring 2026</p>
+    <h1>Digital Load Cell Scale</h1>
+    <p>A digital scale built from four load cells, an HX711 amplifier and an Arduino, in a layered 3D-printed enclosure with an LCD, a tare button and gram/ounce switching.</p>
+    <div class="pills"><span class="pill">0.84% full-scale error</span><span class="pill g">4 load cells · Wheatstone bridge</span><span class="pill k">CAD · Arduino · I2C LCD</span></div>
+    <p class="mut">By <b>Rio Ben-Yehoshua</b> with Beckie Jiang and Zuhan Jiang · The Cooper Union</p>
+  </div>
+  <img src="images/loadcell/hero.jpg" alt="Finished red and black digital scale with LCD and two buttons">
+</header>
+<section>
+  <p class="eb">Results</p>
+  <h2>What testing showed</h2>
+  <div class="row" style="align-items:center">
+    <div class="card hl"><h3>Full-scale error</h3><div class="big">0.84%</div><p class="mut">Worst case across ten test masses: 38 g off at 3162 g, against a 4535.9 g (10 lb) full scale.</p></div>
+    <div class="grid g2">
+      <div class="card"><div class="big" style="font-size:34px">1.05%</div><p class="mut">average percent error across ten masses, 4 g to 4526 g</p></div>
+      <div class="card"><div class="big" style="font-size:34px">R² = 1</div><p class="mut">linear fit, slope 0.997</p></div>
+      <div class="card"><div class="big" style="font-size:34px">±0.6 g</div><p class="mut">standard deviation over 10 repeated readings</p></div>
+      <div class="card"><div class="big" style="font-size:34px">4535.9 g</div><p class="mut">maximum tested load, capped to protect the printed platform</p></div>
+    </div>
+  </div>
+  <figure style="margin-top:20px"><img src="images/loadcell/graph.png" alt="Scale reading versus actual weight, a straight line"><figcaption>Scale reading vs. actual weight: a straight line (y = 0.997x − 1.32).</figcaption></figure>
+  <details class="more-data"><summary>See all ten test masses</summary>
+    <table class="tbl"><thead><tr><th>Actual (g)</th><th>Scale (g)</th><th>Error</th></tr></thead><tbody>
+      <tr><td>4</td><td>3.9</td><td>2.50%</td></tr><tr><td>44</td><td>43.2</td><td>1.82%</td></tr><tr><td>234</td><td>234.1</td><td>0.04%</td></tr>
+      <tr><td>280</td><td>279.8</td><td>0.07%</td></tr><tr><td>454</td><td>463.1</td><td>2.00%</td></tr><tr><td>910</td><td>926.9</td><td>1.86%</td></tr>
+      <tr><td>1362</td><td>1351.2</td><td>0.79%</td></tr><tr><td>2252</td><td>2246.7</td><td>0.24%</td></tr><tr><td>3162</td><td>3200</td><td>1.20%</td></tr>
+      <tr><td>4526</td><td>4526.7</td><td>0.02%</td></tr></tbody></table>
+  </details>
+  <p style="margin-top:14px">Percent error was largest at the lowest masses (2.5% at 4 g), as expected when a small difference is divided by a small mass. The reading never fully settled, so each value was recorded at a reasonable stopping point; that drift shows up in the standard deviation.</p>
+  <p class="back"><a href="index.html">Read the full report (PDF)</a></p>
+</section>
+<section>
+  <p class="eb">The challenge</p>
+  <h2>Build a scale that reads true</h2>
+  <div class="row">
+    <p>The goal was to measure weight accurately in grams and ounces, with one button to tare and one to switch units. The team then tested maximum load, percent error, linearity and repeatability. Purchases beyond instructor-provided parts were capped at $30.</p>
+    <ul>
+      <li>Modeled on a bathroom scale, scaled down</li>
+      <li>Four load cells instead of one, so a larger platform stays level and off-center loads matter less</li>
+      <li>Readable LCD and simple controls</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <p class="eb">Mechanical design</p>
+  <h2>Four layers, each with one job</h2>
+  <p>The scale separates the weighing platform, the load cell support frame and the electronics into layers. This keeps the electronics protected from movement and load, and keeps the load cells aligned. A front box holds the LCD and buttons.</p>
+  <div class="grid g3">
+    <figure><img src="images/loadcell/cad-exploded.png" alt="Exploded CAD view of the scale"><figcaption>Exploded view: platform, support frame, base and front box.</figcaption></figure>
+    <figure><img src="images/loadcell/cad-frame.png" alt="CAD of the load cell support frame"><figcaption>Support frame with four load cell pockets.</figcaption></figure>
+    <figure><img src="images/loadcell/cad-platform.png" alt="CAD of the weighing platform"><figcaption>Weighing platform.</figcaption></figure>
+  </div>
+  <div class="grid g2" style="margin-top:16px">
+    <figure><img src="images/loadcell/platform-lifted.jpg" alt="Scale with the platform lifted, showing load cells and wiring"><figcaption>Platform lifted: the four load cells sit underneath.</figcaption></figure>
+    <figure><img src="images/loadcell/inside.jpg" alt="Open scale showing the load cells"><figcaption>Inside the finished enclosure.</figcaption></figure>
+  </div>
+</section>
+<section>
+  <p class="eb">How it works</p>
+  <h2>From weight to a number on the screen</h2>
+  <div class="row" style="align-items:center">
+    <ol>
+      <li><b>Strain.</b> The four load cells bend slightly under the weight and their strain gauges change resistance. Wired together, they form a full bridge.</li>
+      <li><b>Amplify.</b> The HX711 boosts the tiny signal and converts it to a 24-bit digital value.</li>
+      <li><b>Calculate.</b> The Arduino applies a calibration factor to get mass in grams.</li>
+      <li><b>Display.</b> The LCD shows grams or ounces over I2C, and the serial monitor prints each reading.</li>
+    </ol>
+    <figure><img src="images/loadcell/wiring.jpg" alt="Arduino, HX711 and wiring inside the scale base"><figcaption>The Arduino, HX711 and wiring inside the base.</figcaption></figure>
+  </div>
+</section>
+<section>
+  <p class="eb">My role</p>
+  <h2>Enclosure design and the weighing code</h2>
+  <ul>
+    <li>Designed and CAD-modeled a compact enclosure that holds the load cells, electronics, LCD and controls</li>
+    <li>Programmed the Arduino weighing system with HX711 sensing, push-button inputs and I2C LCD output</li>
+    <li>Implemented signal averaging, tare/reset, unit switching and debounce logic, plus a zero-threshold filter</li>
+  </ul>
+  <div class="grid g2" style="margin-top:16px">
+    <figure><img src="images/loadcell/side.jpg" alt="Side view of the scale"><figcaption>Side view: platform above the electronics bay.</figcaption></figure>
+    <figure><img src="images/loadcell/angled.jpg" alt="Angled view of the scale"><figcaption>Angled view with the display and controls.</figcaption></figure>
+  </div>
+</section>
+<section>
+  <p class="eb">Software</p>
+  <h2>Making the readings steady and usable</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Averaging</h3><p>Each displayed weight averages many readings, about one update per second. That settles the display against random noise but still responds quickly when the load changes.</p></div>
+    <div class="card"><h3>Zero threshold</h3><p>Tiny readings show as 0.0, so an empty scale rests at zero instead of flickering around it.</p></div>
+    <div class="card"><h3>Tare</h3><p>A button press stores a new zero from a 30-sample average and clears the averaging data, so old readings never carry over.</p></div>
+    <div class="card"><h3>Units and debounce</h3><p>Weight is always calculated in grams, then converted to ounces only for display. Button debouncing stops one press from counting twice.</p></div>
+  </div>
+</section>
+<section>
+  <p class="eb">Next steps</p>
+  <h2>If I rebuilt it</h2>
+  <ul>
+    <li>Replace the blocking delays in the button code with non-blocking timing, so the display never pauses.</li>
+    <li>Track down the source of the reading drift, which the report attributes to signal interference or load cell sensitivity.</li>
+  </ul>
+</section>
+<section>
+  <h2>Get in touch</h2>
+  <p><a href="mailto:rio.benyehoshua@cooper.edu">rio.benyehoshua@cooper.edu</a> · <a href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a> · <a href="index.html">Resume (PDF)</a></p>
+  <p class="back"><a href="index.html">← Back to portfolio</a></p>
+</section>
+</div></div>
+</body>
+</html>

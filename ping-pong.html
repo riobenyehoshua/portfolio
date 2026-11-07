@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Angry Birds Ping Pong Recirculation System | Rio Ben-Yehoshua</title>
+<meta name="description" content="An autonomous launch-and-recover machine that scored 110 passes in 60 seconds and placed 1st in class.">
+<meta name="theme-color" content="#12161c">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Rio Ben-Yehoshua">
+<meta property="og:title" content="Angry Birds Ping Pong Recirculation System | Rio Ben-Yehoshua">
+<meta property="og:description" content="An autonomous launch-and-recover machine that scored 110 passes in 60 seconds and placed 1st in class.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><div class="links"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Angry Birds Ping Pong</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-pingpong" id="p-pingpong">
+
+<header class="hero">
+  <div>
+    <p class="eb">EID-103 Principles of Design · Spring 2026</p>
+    <h1>Angry Birds Ping Pong Recirculation System</h1>
+    <p>An autonomous launch-and-recover machine: fire six ping pong balls through a 6″ × 6″ hoop, catch them, reload them, and repeat for 60 seconds with no human touch after one button press.</p>
+    <div class="pills"><span class="pill">1st place in class</span><span class="pill g">110 passes in 60 s</span><span class="pill k">6 balls · 1 launcher · 0 tubes</span></div>
+    <p class="mut">By <b>Rio Ben-Yehoshua</b> · Mechanical Engineering, The Cooper Union</p>
+  </div>
+  <img src="images/pingpong/hero.jpg" alt="Top-down view of the full Angry Birds launcher, hoop and net system">
+</header>
+<section>
+  <p class="eb">My role</p>
+  <h2>The launcher and the return loop</h2>
+  <div class="row">
+    <ul>
+      <li>Designed and 3D-printed the launcher mounts and funnel, iterating through many revisions</li>
+      <li>Iterated the catch net and its reinforcement through repeated testing</li>
+      <li>Worked on the return loop that gets caught balls back into the launcher</li>
+      <li>Wrote the launcher control code (L298N flywheel motors, MOSFET-driven funnel motor, one-button start) on an Arduino; the team moved it to an ESP32 at the end, where a teammate extended it</li>
+      <li>Early in the project, prototyped the IR hoop sensing before the team switched to a camera</li>
+    </ul>
+    <figure><img src="images/pingpong/launcher-final.jpg" alt="Final launcher with red mounts, grip-surfaced flywheels, and Angry Birds on the mounts"><figcaption>The final launcher: red printed mounts, grip-surfaced flywheels, and a red bird on each side.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <p class="eb">The challenge</p>
+  <h2>Most passes in 60 seconds wins</h2>
+  <div class="row">
+    <div>
+      <p>The brief: launch ping pong balls through a hoop, recirculate them without human help, and count valid passes, all in 60 seconds from a single button press. The ranking came down to one thing: how many balls made it through the hoop.</p>
+      <ul>
+        <li>Hoop opening 6″ × 6″, placed 12″ out and 12″ up from the launch point</li>
+        <li>Only 6 balls; no tubes or funnels guiding balls at the hoop</li>
+        <li>Launcher and hoop can’t be rigidly connected; everything fits one desk</li>
+      </ul>
+    </div>
+    <div class="card hl"><h3>The result</h3><div class="big">110</div><p class="mut">passes in the official 60-second run, first place in the class competition.</p></div>
+  </div>
+</section>
+
+<section>
+  <p class="eb">Videos</p>
+  <h2>See it run</h2>
+  <div class="grid vids">
+    <figure><video autoplay muted loop playsinline controls poster="images/pingpong/video-full-run-poster.jpg" src="videos/pingpong-full-run.mp4"></video><figcaption>A full 60-second run, top-down.</figcaption></figure>
+    <figure><video autoplay muted loop playsinline controls poster="images/pingpong/video-side-view-poster.jpg" src="videos/pingpong-side-view.mp4"></video><figcaption>Side view: launcher, backboard and net at work.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <p class="eb">What we did differently</p>
+  <h2>Launch, recover, reload, repeat</h2>
+  <p>Many teams returned their balls through enclosed tubes. We let ours fly: a ball goes through the hoop, rebounds off a curved backboard, drops into a net, and a funnel feeds it straight back to the wheels. The open path risks stray balls, but it recirculates much faster.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Two-wheel flywheel launcher</h3><p>Two 3D-printed wheels with a grip surface pinch each ball from both sides, giving fast, repeatable launches without a single-wheel or air-powered setup.</p></div>
+    <div class="card"><h3>Open bounce-back return</h3><p>Instead of a closed return tube, the ball rebounds off a curved backboard into a net. That removed the slowest part of recirculation.</p></div>
+    <div class="card"><h3>Camera counting, not beam-break</h3><p>Our first hoop counted passes with IR beams, but it missed very fast balls, and a thick sensor hoop would also have counted balls on their way back. A thin decorative hoop with camera counting solved both.</p></div>
+    <div class="card"><h3>Catch net with slack</h3><p>A slightly loose net absorbs the energy of returning balls so they stay put, which meant we never had to slow the launcher to keep up.</p></div>
+  </div>
+</section>
+
+<section>
+  <p class="eb">How it works</p>
+  <h2>Launch, bounce, catch, feed</h2>
+  <div class="row" style="align-items:center">
+    <div>
+      <ol>
+        <li><b>Launch.</b> Two spinning wheels grip each ball and fire it through the hoop.</li>
+        <li><b>Bounce.</b> The ball rebounds off a curved backboard.</li>
+        <li><b>Catch.</b> A net with slack absorbs its energy and holds it.</li>
+        <li><b>Feed.</b> A funnel and a small feed motor drop balls back between the wheels.</li>
+      </ol>
+      <p>A camera on a teammate’s laptop counted the passes and sent the start and stop signals to the launcher.</p>
+    </div>
+    <figure><img src="images/pingpong/layout-diagram.jpg" alt="Layout diagram of the complete launcher system"><figcaption>Our layout diagram for the complete system.</figcaption></figure>
+  </div>
+  <figure style="margin-top:20px"><video autoplay muted loop playsinline controls poster="images/pingpong/video-launch-poster.jpg" src="videos/pingpong-launch.mp4"></video><figcaption>Side view of a launch through the hoop.</figcaption></figure>
+</section>
+
+
+<section>
+  <p class="eb">Mechanical design</p>
+  <h2>The launcher, iteration by iteration</h2>
+  <div class="grid cad">
+    <figure><img src="images/pingpong/cad-mount-funnel.jpg" alt="CAD of the launcher mount and funnel"><figcaption>Launcher mount and funnel</figcaption></figure>
+    <figure><img src="images/pingpong/cad-funnel.jpg" alt="CAD of the funnel"><figcaption>Funnel and mount</figcaption></figure>
+    <figure><img src="images/pingpong/cad-two-wheel-bracket.jpg" alt="CAD of the two-wheel bracket"><figcaption>Two-wheel bracket</figcaption></figure>
+    <figure><img src="images/pingpong/cad-side-plate.jpg" alt="CAD of the mount side plate"><figcaption>Mount side plate</figcaption></figure>
+    <figure><img src="images/pingpong/cad-flywheel.jpg" alt="CAD of a flywheel"><figcaption>Textured flywheel</figcaption></figure>
+  </div>
+  <div class="grid g3 sq" style="margin-top:16px">
+    <figure><img src="images/pingpong/flywheels.jpg" alt="Printed flywheels with a grip surface"><figcaption>Printed flywheels with the grip surface.</figcaption></figure>
+    <figure><img src="images/pingpong/launcher-early.jpg" alt="Earlier launcher build with funnel and feed motor"><figcaption>An earlier build with the funnel and feed motor.</figcaption></figure>
+    <figure><img src="images/pingpong/launcher-final-build.jpg" alt="Final launcher build with birds, wheels and electronics"><figcaption>The final build: wheels, electronics and birds.</figcaption></figure>
+  </div>
+  <p style="margin-top:16px">The wheels are about 2 inches in diameter on DC motors. The mount and funnel were designed as one system, so changing the funnel meant revising the mount, which led to many iterations.</p>
+</section>
+
+<section>
+  <p class="eb">Problems I solved</p>
+  <h2>What broke, and what fixed it</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Motors shook the mounts apart</h3><p>The DC motors were strong enough to break their printed mounts from sustained vibration. I added washers for smoother spinning and kept iterating the mount design until it survived full runs.</p></div>
+    <div class="card"><h3>The wheel grip kept failing</h3><p>Rubber bands on the flywheels fell off or snapped at speed. I switched to a high-grip textured sticker material and superglued it on so it stayed put at full speed.</p></div>
+    <div class="card"><h3>Balls escaped the net</h3><p>The first fabric catcher let fast balls bounce out. I switched to a net with slack to absorb their energy and added reinforcing panels in the spots that testing showed balls escaping from.</p></div>
+    <div class="card"><h3>Jams in the funnel</h3><p>I traced jams to too many balls entering the funnel at once. A small feed motor helped early on, and once launches were fast enough, balls never queued up in the first place.</p></div>
+  </div>
+  <div class="row" style="margin-top:20px">
+    <figure><img src="images/pingpong/catch-net.jpg" alt="Catch net stretched on wooden frame above the launcher"><figcaption>The catch net funnels balls down into the launcher.</figcaption></figure>
+    <figure><img src="images/pingpong/launcher-funnel-motor.jpg" alt="Launcher with the funnel and its small feed motor"><figcaption>Launcher with the funnel and its small feed motor.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <p class="eb">The Angry Birds theme</p>
+  <h2>Built to look like the game</h2>
+  <p>The hoop is a laser-cut cardboard Angry Birds tower with green pig ping pong balls and laser-engraved TNT crates. It carries no electronics, since the camera does the counting; it’s there for the assignment and the theme. Red birds sit on the launcher mounts, and the backboard sits above the pigs.</p>
+  <div class="grid pair">
+    <figure><img src="images/pingpong/sketch.jpg" alt="Early sketch of the structure"><figcaption>From the early sketch…</figcaption></figure>
+    <figure><img src="images/pingpong/hoop-tower.jpg" alt="Finished cardboard hoop and pig tower"><figcaption>…to the finished hoop and tower.</figcaption></figure>
+  </div>
+  <div class="grid g3" style="margin-top:16px;align-items:center">
+    <figure><img src="images/pingpong/pig.jpg" alt="Pirate pig in a cardboard house"><figcaption>One of the pigs, eye patch included.</figcaption></figure>
+    <figure><img src="images/pingpong/backboard.jpg" alt="Backboard above the pig tower"><figcaption>Backboard above the pig tower.</figcaption></figure>
+    <figure><img src="images/pingpong/tnt-crate.jpg" alt="Laser-engraved TNT crate above a pig"><figcaption>Laser-engraved TNT crate.</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <p class="eb">Takeaways</p>
+  <h2>What I took away</h2>
+  <ul>
+    <li><b>Failures drove the design.</b> Broken mounts, slipping wheel grip and escaping balls each led to a specific fix, found by watching real runs.</li>
+    <li><b>Details matter at speed.</b> At these motor speeds, vibration, grip and net slack decided whether the system worked.</li>
+    <li><b>Measuring fast events is hard.</b> Our camera counter peaked at 86 in testing against 110 passes in the official run.</li>
+    <li><b>Speed over safety only works</b> if you engineer for the failure modes.</li>
+  </ul>
+  <p class="mut">Team: Heywood Chalom, Jake Goldmann, Gabi Jabbour, and me. My teammates built the camera counting and laptop display; I focused on the launcher and return system.</p>
+</section>
+
+<section>
+  <h2>Get in touch</h2>
+  <p><a href="mailto:rio.benyehoshua@cooper.edu">rio.benyehoshua@cooper.edu</a> · <a href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a></p>
+  <p class="mut">Rio Ben-Yehoshua · The Cooper Union · Mechanical Engineering</p>
+</section>
+
+
+<p class="back" style="padding-bottom:30px"><a href="index.html">← Back to portfolio</a></p></div></div>
+</body>
+</html>
