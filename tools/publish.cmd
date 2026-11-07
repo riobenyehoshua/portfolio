@@ -7,5 +7,10 @@ if "%MSG%"=="" set "MSG=Update site"
 git add -A
 git commit -m "%MSG%"
 git push
+if errorlevel 1 (
+  echo.
+  echo Publishing FAILED: the changes were saved on this computer but not uploaded.
+  exit /b 1
+)
 echo.
 echo Live in about a minute: https://riobenyehoshua.github.io/portfolio/

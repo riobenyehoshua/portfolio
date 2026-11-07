@@ -3,6 +3,7 @@ rem Put a new resume PDF on the site and publish it.
 rem   Double-click this file: it uses the newest PDF with "Resume" in its name in Downloads.
 rem   Or from a terminal:     tools\update-resume.cmd "C:\path\to\resume.pdf"
 rem Any phone number in the PDF is removed before it is published.
+rem Afterwards the downloaded PDF is moved out of Downloads into source\resume-history (private).
 cd /d "%~dp0.."
 set "SRC=%~1"
 if "%SRC%"=="" (
@@ -28,4 +29,12 @@ if errorlevel 1 (
   exit /b 1
 )
 call "%~dp0publish.cmd" "Update resume"
+if errorlevel 1 (
+  pause
+  exit /b 1
+)
+rem Move the PDF you downloaded out of Downloads into a private dated archive (never published).
+for /f %%d in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd_HHmm"') do set "STAMP=%%d"
+if not exist "source\resume-history" mkdir "source\resume-history"
+move /y "%SRC%" "source\resume-history\%STAMP%.pdf" >nul && echo Moved the downloaded PDF to source\resume-history\%STAMP%.pdf
 pause
