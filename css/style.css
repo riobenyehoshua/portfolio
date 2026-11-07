@@ -149,3 +149,11 @@ details.more-data summary{cursor:pointer;font-weight:700;color:var(--accent);mar
 /* ---- Cropped photos: add class "crop" to a grid/row; choose the focus per photo with
    style="object-position: X% Y%" (0% = top/left edge, 100% = bottom/right edge) ---- */
 .crop figure img{aspect-ratio:4/5;object-fit:cover}
+
+/* ---- Currently working on ---- */
+.status{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 16px}
+.status::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#d99a2b;box-shadow:0 0 0 3px rgba(217,154,43,.2)}
+.steps{display:grid;gap:8px;margin:14px 0 4px}
+.steps div{display:grid;grid-template-columns:64px 1fr;gap:12px}
+.steps dt{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-top:3px}
+.steps dd{margin:0;font-size:15px}
