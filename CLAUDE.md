@@ -8,6 +8,11 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
 - Pages: `index.html`, `ping-pong.html`, `load-cell-scale.html`, `plantplex.html`. The nav and footer
   contact are repeated in each page: a nav/contact change must be made in all four.
 - Project order (dropdown, pager "Next project" links): ping pong -> load cell scale -> PlantPlex -> back to ping pong.
+- Homepage order: intro, Projects, In the shop (`#shop`: cardboard chair + metal casting, photos in `images/shop/`),
+  About, Skills, Beyond the classroom, Contact. The old standalone shop page lives in
+  `source/old-versions/rio-portfolio-site.zip`; its circuit photos now sit on the ping pong page (Electronics section).
+- The casting text ("used it to determine its strain") is Rio's own wording and still vague: ask for the metal,
+  the test and the result before expanding it. Don't invent details.
 - Each project page has a theme class on `.page` (`t-pingpong` red, `t-scale` blue, `t-plant` green; home is purple).
   Colors are CSS variables at the top of style.css.
 - `source/` is gitignored and private: original photos (`source/original-photos`, with a CSV mapping), the reports,
