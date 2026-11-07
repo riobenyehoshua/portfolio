@@ -13,12 +13,18 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
 - `source/` is gitignored and private: original photos (`source/original-photos`, with a CSV mapping), the reports,
   and the original single-file artifact. Never publish files from it without asking.
 - Resume lives at `files/Rio-Ben-Yehoshua-Resume.pdf` (fixed name; pages link to it). It is public.
+  Rio edits it in Google Docs. Publish it only via `tools\update-resume.cmd`, which strips phone numbers
+  (`tools/strip_phone.py`, PyMuPDF in the gitignored `tools/.venv`). Rio's phone number must never be published.
 
 ## Conventions
 - Ask Rio before any big design change (layout, colors, fonts). Wording and small fixes are fine.
 - Don't invent facts (dates, numbers, roles). Sources of truth: resume PDF and the reports in `source/reports/`.
 - New images: put in `images/<project>/`, max ~2000px long edge, JPEG for photos, PNG for CAD/graphs.
-  Give `<img>` width/height attributes and `loading="lazy"` unless it's in the top banner.
+  Use `loading="lazy"` unless it's visible when the page opens. Do NOT add width/height attributes to `<img>`:
+  with a stale cached stylesheet they stretch photos (this happened once). Sizing comes from CSS
+  (aspect-ratio + object-fit), same as the original design.
+- After changing `css/style.css` or `js/site.js`, bump the `?v=N` on their links in all four pages, so
+  browsers never combine a cached old stylesheet with new pages.
 - Videos: `data-autoplay muted loop playsinline controls preload="none"` with a poster image.
 
 ## Workflow
