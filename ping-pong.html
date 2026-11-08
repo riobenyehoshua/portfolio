@@ -47,7 +47,7 @@
   <h2>Most passes in 60 seconds wins</h2>
   <div class="row">
     <div>
-      <p>The brief: launch ping pong balls through a hoop, recirculate them without human help, and count valid passes, all in 60 seconds from a single button press. The ranking came down to one thing: how many balls made it through the hoop.</p>
+      <p>Launch balls through a hoop, recirculate them without human help, and count valid passes. The ranking came down to one thing: how many balls made it through.</p>
       <ul>
         <li>Hoop opening 6″ × 6″, placed 12″ out and 12″ up from the launch point</li>
         <li>Only 6 balls; no tubes or funnels guiding balls at the hoop</li>
@@ -70,28 +70,12 @@
 <section>
   <p class="eb">What we did differently</p>
   <h2>Launch, recover, reload, repeat</h2>
-  <p>Many teams returned their balls through enclosed tubes. We let ours fly: a ball goes through the hoop, rebounds off a curved backboard, drops into a net, and a funnel feeds it straight back to the wheels. The open path risks stray balls, but it recirculates much faster.</p>
+  <p>Many teams returned their balls through enclosed tubes. We let ours fly. The open path risks stray balls, but it recirculates much faster.</p>
   <div class="grid g2">
-    <div class="card"><h3>Two-wheel flywheel launcher</h3><p>Two 3D-printed wheels with a grip surface pinch each ball from both sides, giving fast, repeatable launches without a single-wheel or air-powered setup.</p></div>
-    <div class="card"><h3>Open bounce-back return</h3><p>Instead of a closed return tube, the ball rebounds off a curved backboard into a net. That removed the slowest part of recirculation.</p></div>
-    <div class="card"><h3>Camera counting, not beam-break</h3><p>Our first hoop counted passes with IR beams, but it missed very fast balls, and a thick sensor hoop would also have counted balls on their way back. A thin decorative hoop with camera counting solved both.</p></div>
-    <div class="card"><h3>Catch net with slack</h3><p>A slightly loose net absorbs the energy of returning balls so they stay put, which meant we never had to slow the launcher to keep up.</p></div>
-  </div>
-</section>
-
-<section>
-  <p class="eb">How it works</p>
-  <h2>Launch, bounce, catch, feed</h2>
-  <div>
-    <div>
-      <ol>
-        <li><b>Launch.</b> Two spinning wheels grip each ball and fire it through the hoop.</li>
-        <li><b>Bounce.</b> The ball rebounds off a curved backboard.</li>
-        <li><b>Catch.</b> A net with slack absorbs its energy and holds it.</li>
-        <li><b>Feed.</b> A funnel and a small feed motor drop balls back between the wheels.</li>
-      </ol>
-      <p>A camera on a teammate’s laptop counted the passes and sent the start and stop signals to the launcher.</p>
-    </div>
+    <div class="card"><h3>Two-wheel flywheel launcher</h3><p>Two 3D-printed wheels with a grip surface pinch each ball from both sides for fast, repeatable launches at about 5 m/s, measured frame by frame from the 60-second run video.</p></div>
+    <div class="card"><h3>Open bounce-back return</h3><p>A ball goes through the hoop, rebounds off a curved backboard and drops into a net, and a funnel and small feed motor send it back to the wheels. That removed the slowest part of recirculation.</p></div>
+    <div class="card"><h3>Camera counting, not beam-break</h3><p>Our first hoop used IR beams, but it missed very fast balls and would also have counted balls on their way back. A thin hoop with a camera on a teammate’s laptop solved both, and the laptop sent the launcher its start and stop signals.</p></div>
+    <div class="card"><h3>Catch net with slack</h3><p>A slightly loose net absorbs the energy of returning balls, so we never had to slow the launcher to keep up.</p></div>
   </div>
   <figure style="margin-top:20px"><video data-autoplay muted loop playsinline controls preload="none" poster="images/pingpong/video-launch-poster.jpg" src="videos/pingpong-launch.mp4"></video><figcaption>Side view of a launch through the hoop.</figcaption></figure>
 </section>
@@ -118,11 +102,11 @@
 <section>
   <p class="eb">Electronics</p>
   <h2>Prototyping the sensing and drive circuits</h2>
-  <p>Before the team switched to camera counting, I built an 8-sensor IR hoop prototype that measured ball velocity to within ±5%. To check it, we held the hoop horizontal and dropped balls from rest 1 ft above it: free fall predicts about 2.4 m/s at the hoop (v = √(2gh)), and our readings came within 5% of that. I also wired the launcher’s motor driver and funnel motor for the Arduino control code.</p>
+  <p>Before the team switched to camera counting, I built an 8-sensor IR hoop that measured ball speed to within ±5%. To check it, we dropped balls from rest 1 ft above the horizontal hoop: free fall predicts about 2.4 m/s (v = √(2gh)).</p>
   <div class="grid g3" style="margin-top:16px">
-    <div class="card"><h3>Speed from two planes</h3><p>The hoop had two sensing planes, four IR break beams each. The Arduino timestamped each plane in microseconds and divided the distance between the planes by the time between them to get the ball’s speed.</p></div>
-    <div class="card"><h3>Interrupts for fast balls</h3><p>One beam on each plane was wired to a hardware interrupt, so a fast ball got timestamped the instant it broke the beam. The other beams were polled as a backup. A pass only counted if the entrance plane tripped before the exit plane, and a 200 ms lockout kept one ball from counting twice.</p></div>
-    <div class="card"><h3>Launcher start-up</h3><p>One button spins up both flywheels through an L298N motor driver. The funnel motor, switched by a MOSFET, starts 2.5 seconds later, so the wheels are already at speed when the first ball reaches them.</p></div>
+    <div class="card"><h3>Speed from two planes</h3><p>Two planes of four IR break beams. The Arduino timestamped each plane in microseconds and divided the distance between them by the time.</p></div>
+    <div class="card"><h3>Interrupts for fast balls</h3><p>One beam per plane used a hardware interrupt to timestamp fast balls instantly, with the others polled as backup. A pass counted only if the entrance plane tripped first, and a 200 ms lockout prevented double counts.</p></div>
+    <div class="card"><h3>Launcher start-up</h3><p>I wired the launcher so one button spins up both flywheels through an L298N driver. A MOSFET-switched funnel motor starts 2.5 seconds later, so the wheels are at speed when the first ball arrives.</p></div>
   </div>
   <div class="grid g3 sq" style="margin-top:22px">
     <figure><img src="images/pingpong/ir-hoop-prototype.jpg" alt="IR hoop sensor prototype wired to an Arduino" loading="lazy" decoding="async"><figcaption>The 8-sensor IR hoop prototype.</figcaption></figure>
@@ -135,10 +119,10 @@
   <p class="eb">Problems I solved</p>
   <h2>What broke, and what fixed it</h2>
   <div class="grid g2">
-    <div class="card"><h3>Motors shook the mounts apart</h3><p>The DC motors were strong enough to break their printed mounts from sustained vibration. I added washers for smoother spinning and kept iterating the mount design until it survived full runs.</p></div>
-    <div class="card"><h3>The wheel grip kept failing</h3><p>Rubber bands on the flywheels fell off or snapped at speed. I switched to a high-grip textured sticker material and superglued it on so it stayed put at full speed.</p></div>
-    <div class="card"><h3>Balls escaped the net</h3><p>The first fabric catcher let fast balls bounce out. I switched to a net with slack to absorb their energy and added reinforcing panels in the spots that testing showed balls escaping from.</p></div>
-    <div class="card"><h3>Jams in the funnel</h3><p>I traced jams to too many balls entering the funnel at once. A small feed motor helped early on, and once launches were fast enough, balls never queued up in the first place.</p></div>
+    <div class="card"><h3>Motors shook the mounts apart</h3><p>Sustained vibration broke the printed motor mounts. I added washers for smoother spinning and kept iterating the mount until it survived full runs.</p></div>
+    <div class="card"><h3>The wheel grip kept failing</h3><p>Rubber bands on the flywheels fell off or snapped at speed. A high-grip textured sticker material, superglued on, stayed put.</p></div>
+    <div class="card"><h3>Balls escaped the net</h3><p>Fast balls bounced out of the first fabric catcher. I switched to the net and added reinforcing panels where testing showed balls escaping.</p></div>
+    <div class="card"><h3>Jams in the funnel</h3><p>Too many balls were entering the funnel at once. A small feed motor helped early on, and once launches were fast enough, balls never queued up.</p></div>
   </div>
   <div class="row crop" style="margin-top:20px">
     <figure><img loading="lazy" decoding="async" src="images/pingpong/catch-net.jpg" style="object-position:50% 85%" alt="Catch net stretched on wooden frame above the launcher"><figcaption>The catch net funnels balls down into the launcher.</figcaption></figure>
@@ -149,7 +133,7 @@
 <section>
   <p class="eb">The Angry Birds theme</p>
   <h2>Built to look like the game</h2>
-  <p>The hoop is a laser-cut cardboard Angry Birds tower with green pig ping pong balls and laser-engraved TNT crates. It carries no electronics, since the camera does the counting; it’s there for the assignment and the theme. Red birds sit on the launcher mounts, and the backboard sits above the pigs.</p>
+  <p>The hoop is a laser-cut cardboard Angry Birds tower with green pig ping pong balls and laser-engraved TNT crates, and red birds sit on the launcher mounts. It carries no electronics, since the camera does the counting.</p>
   <div class="grid pair">
     <figure><img loading="lazy" decoding="async" src="images/pingpong/sketch.jpg" alt="Early sketch of the structure"><figcaption>From the early sketch…</figcaption></figure>
     <figure><img loading="lazy" decoding="async" src="images/pingpong/hoop-tower.jpg" alt="Finished cardboard hoop and pig tower"><figcaption>…to the finished hoop and tower.</figcaption></figure>
@@ -165,16 +149,15 @@
   <p class="eb">Version 2</p>
   <h2>What I’d design in from the start</h2>
   <div class="grid g2">
-    <div class="card"><h3>Enclosure and wiring, planned together</h3><p>A laser-cut cardboard enclosure covered the motors and wiring under the printed flywheel mounts. Next time I’d plan the wiring and the enclosure together from the start, so everything routes in cleanly, and design the enclosure so the launch angle is easy to adjust.</p></div>
-    <div class="card"><h3>A camera built into the system</h3><p>Our counting camera looked down on the system from above, which was awkward to set up. I’d build it in low, on the floor under the hoop, and position it so it catches every ball, even the fastest ones.</p></div>
+    <div class="card"><h3>Enclosure and wiring, planned together</h3><p>I’d plan the wiring and the laser-cut cardboard enclosure over the motors together from the start, so everything routes in cleanly and the launch angle is easy to adjust.</p></div>
+    <div class="card"><h3>A camera built into the system</h3><p>Our counting camera looked down from above, which was awkward to set up. I’d build it in low, on the floor under the hoop, positioned to catch every ball.</p></div>
   </div>
 </section>
 <section>
   <p class="eb">Takeaways</p>
   <h2>What I took away</h2>
   <ul>
-    <li><b>Failures drove the design.</b> Broken mounts, slipping wheel grip and escaping balls each led to a specific fix, found by watching real runs.</li>
-    <li><b>Details matter at speed.</b> At these motor speeds, vibration, grip and net slack decided whether the system worked.</li>
+    <li><b>Failures drove the design.</b> Each fix above came from watching real runs.</li>
     <li><b>Measuring fast events is hard.</b> In the official competition run, our camera counted at most 86 of the 110 passes.</li>
     <li><b>Speed over safety only works</b> if you engineer for the failure modes.</li>
   </ul>

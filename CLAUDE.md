@@ -13,7 +13,7 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
   About, Skills, Beyond the classroom, Contact. The old standalone shop page lives in
   `source/old-versions/rio-portfolio-site.zip`; its circuit photos now sit on the ping pong page (Electronics section).
 - Casting text: test and result come from `source/reports/dogbone-tensile-test-2026-11-04` (Instron export). The metal is
-  still unknown: ask Rio, don't invent it. Don't compute stress from the width/thickness saved in that file: they were left
+  aluminum; the exact alloy is still unknown: ask Rio, don't invent it. Don't compute stress from the width/thickness saved in that file: they were left
   over from another group's specimen (13.39 x 3.1 mm). Ask Rio for the measured cross-section.
 - Each project page has a theme class on `.page` (`t-pingpong` red, `t-scale` blue, `t-plant` green; home is purple).
   Colors are CSS variables at the top of style.css.

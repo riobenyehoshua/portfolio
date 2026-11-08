@@ -88,14 +88,14 @@ figure{margin:0}figcaption{font-size:7.5pt;color:var(--mut);margin-top:3px}
       </div>
     </div>
     <div class="cols">
-      <div class="box" style="--c:#5b82b6"><p class="status">● In progress · since Oct 2026</p><h3>Crazyflie drone formations</h3><p>With a professor, programming a fleet of Crazyflie nano-drones to fly in formations that act out mathematical models, such as a mass-spring oscillation. So far: calibrated the drones and the Lighthouse positioning system.</p></div>
+      <div class="box" style="--c:#5b82b6"><p class="status">● In progress · since Oct 2026</p><h3>Crazyflie drone formations</h3><p>With a professor, programming a fleet of Crazyflie nano-drones in Python (cflib) to fly in formations that act out mathematical models, such as a mass-spring oscillation. So far: calibrated the drones and the Lighthouse positioning system.</p></div>
       <div class="box" style="--c:#c9686e"><p class="status">● In progress · since Spring 2026</p><h3>Cooper Union Motorsports (FSAE)</h3><p>Body Cockpit Safety team. Designed a pedal box chassis mount in SolidWorks, evaluated driver harness ergonomics, and reviewed FSAE rules to select floor closeout, firewall and insulation materials.</p></div>
     </div>
     <div>
       <p class="sec">In the shop</p>
       <div class="cols" style="grid-template-columns:1.25fr 1fr;align-items:start">
         <div style="display:grid;grid-template-columns:1.1in 1fr;gap:10px;font-size:8.8pt"><img src="../../images/shop/chair.jpg" alt="" style="height:.9in"><div><h3>Custom cardboard chair for a preschooler</h3><p style="margin:0">For a child with cerebral palsy who often fell out of his seat. Laser-cut triwall cardboard with arm supports, a sliding foot stool and a storage shelf.</p></div></div>
-        <div style="display:grid;grid-template-columns:1.1in 1fr;gap:10px;font-size:8.8pt"><img src="../../images/shop/casting-pour.jpg" alt="" style="height:.9in"><div><h3>Sand casting a dog-bone specimen</h3><p style="margin:0">Sand cast, then tensile tested to failure on an Instron. Peak force 8.90 kN; fractured at about 1.9% strain.</p></div></div>
+        <div style="display:grid;grid-template-columns:1.1in 1fr;gap:10px;font-size:8.8pt"><img src="../../images/shop/casting-pour.jpg" alt="" style="height:.9in"><div><h3>Sand casting a dog-bone specimen</h3><p style="margin:0">Sand cast aluminum, tensile tested to failure on an Instron. Peak force 8.90 kN; fractured at about 1.9% strain.</p></div></div>
       </div>
     </div>
   </div>
@@ -128,7 +128,7 @@ figure{margin:0}figcaption{font-size:7.5pt;color:var(--mut);margin-top:3px}
       <p class="sec">Design decisions</p>
       <div class="c3">
         <div class="box"><h3>Open return, not a tube</h3><p>Most teams used enclosed tubes. Ours rebounds off a curved backboard into a net and a funnel feeds the wheels. Riskier, but it removed the slowest part of recirculation.</p></div>
-        <div class="box"><h3>Two-wheel flywheel</h3><p>Two printed wheels with a grip surface pinch each ball from both sides, for fast, repeatable launches. The funnel starts 2.5 s after the wheels so they are at speed first.</p></div>
+        <div class="box"><h3>Two-wheel flywheel</h3><p>Two printed wheels with a grip surface pinch each ball from both sides, for fast, repeatable launches at about 5 m/s (from run video). The funnel starts 2.5 s after the wheels so they are at speed first.</p></div>
         <div class="box"><h3>Speed from two planes</h3><p>The IR hoop timed each ball between two planes of four beams, using hardware interrupts for microsecond timestamps and a 200 ms lockout so no ball counted twice.</p></div>
       </div>
     </div>
