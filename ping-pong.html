@@ -38,7 +38,7 @@
       <li>Wrote the launcher control code (L298N flywheel motors, MOSFET-driven funnel motor, one-button start) on an Arduino; the team moved it to an ESP32 at the end, where a teammate extended it</li>
       <li>Early in the project, prototyped the IR hoop sensing before the team switched to a camera</li>
     </ul>
-    <figure><img loading="lazy" decoding="async" src="images/pingpong/launcher-final.jpg" alt="Final launcher with red mounts, grip-surfaced flywheels, and Angry Birds on the mounts"><figcaption>The final launcher: red printed mounts, grip-surfaced flywheels, and a red bird on each side.</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="images/pingpong/launcher-final.jpg" alt="Final launcher with red 3D-printed flywheels and an Angry Bird on each side"><figcaption>The final launcher: red 3D-printed flywheels with a grip surface, and a red bird on each side.</figcaption></figure>
   </div>
 </section>
 
@@ -82,7 +82,7 @@
 <section>
   <p class="eb">How it works</p>
   <h2>Launch, bounce, catch, feed</h2>
-  <div class="row" style="align-items:center">
+  <div>
     <div>
       <ol>
         <li><b>Launch.</b> Two spinning wheels grip each ball and fire it through the hoop.</li>
@@ -92,7 +92,6 @@
       </ol>
       <p>A camera on a teammate’s laptop counted the passes and sent the start and stop signals to the launcher.</p>
     </div>
-    <figure><img loading="lazy" decoding="async" src="images/pingpong/layout-diagram.jpg" alt="Layout diagram of the complete launcher system"><figcaption>Our layout diagram for the complete system.</figcaption></figure>
   </div>
   <figure style="margin-top:20px"><video data-autoplay muted loop playsinline controls preload="none" poster="images/pingpong/video-launch-poster.jpg" src="videos/pingpong-launch.mp4"></video><figcaption>Side view of a launch through the hoop.</figcaption></figure>
 </section>
@@ -166,7 +165,7 @@
   <p class="eb">Version 2</p>
   <h2>What I’d design in from the start</h2>
   <div class="grid g2">
-    <div class="card"><h3>An adjustable launcher enclosure</h3><p>The launcher sat on a laser-cut cardboard box. I’d redesign that enclosure so the launch angle is easy to adjust, and design it around the wiring from day one so the electronics are enclosed and the wires routed and covered.</p></div>
+    <div class="card"><h3>Enclosure and wiring, planned together</h3><p>A laser-cut cardboard enclosure covered the motors and wiring under the printed flywheel mounts. Next time I’d plan the wiring and the enclosure together from the start, so everything routes in cleanly, and design the enclosure so the launch angle is easy to adjust.</p></div>
     <div class="card"><h3>A camera built into the system</h3><p>Our counting camera looked down on the system from above, which was awkward to set up. I’d build it in low, on the floor under the hoop, and position it so it catches every ball, even the fastest ones.</p></div>
   </div>
 </section>
