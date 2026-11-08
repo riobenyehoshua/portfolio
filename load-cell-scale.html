@@ -45,7 +45,7 @@
       <tr><td>1362</td><td>1351.2</td><td>0.79%</td></tr><tr><td>2252</td><td>2246.7</td><td>0.24%</td></tr><tr><td>3162</td><td>3200</td><td>1.20%</td></tr>
       <tr><td>4526</td><td>4526.7</td><td>0.02%</td></tr></tbody></table>
   </details>
-  <p style="margin-top:14px">Percent error was largest at the lowest masses (2.5% at 4 g), as expected when a small difference is divided by a small mass. The reading never fully settled, so each value was recorded at a reasonable stopping point; that drift shows up in the standard deviation.</p>
+  <p style="margin-top:14px">Percent error was largest at the lowest masses (2.5% at 4 g), as expected when a small difference is divided by a small mass. The reading never fully settled, so each value was recorded at a reasonable stopping point; that drift shows up in the standard deviation. The scale was sensitive enough that moving air or a bump to the table changed the reading.</p>
 </section>
 <section>
   <p class="eb">The challenge</p>
@@ -80,7 +80,7 @@
     <ol>
       <li><b>Strain.</b> The four load cells bend slightly under the weight and their strain gauges change resistance. Wired together, they form a full bridge.</li>
       <li><b>Amplify.</b> The HX711 boosts the tiny signal and converts it to a 24-bit digital value.</li>
-      <li><b>Calculate.</b> The Arduino divides the raw reading by a calibration factor (20.067 counts per gram) to get mass in grams.</li>
+      <li><b>Calculate.</b> The Arduino divides the raw reading by a calibration factor (20.067 counts per gram) to get mass in grams. We found the factor by weighing a known mass and adjusting it in the code until the reading matched.</li>
       <li><b>Display.</b> The LCD shows grams or ounces over I2C, and the serial monitor prints each reading.</li>
     </ol>
     <figure><img loading="lazy" decoding="async" src="images/loadcell/wiring.jpg" alt="Arduino, HX711 and wiring inside the scale base"><figcaption>The Arduino, HX711 and wiring inside the base.</figcaption></figure>

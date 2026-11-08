@@ -119,7 +119,7 @@
 <section>
   <p class="eb">Electronics</p>
   <h2>Prototyping the sensing and drive circuits</h2>
-  <p>Before the team switched to camera counting, I built an 8-sensor IR hoop prototype that measured ball velocity to within ±5%. I also wired the launcher’s motor driver and funnel motor for the Arduino control code.</p>
+  <p>Before the team switched to camera counting, I built an 8-sensor IR hoop prototype that measured ball velocity to within ±5%. To check it, we held the hoop horizontal and dropped balls from rest 1 ft above it: free fall predicts about 2.4 m/s at the hoop (v = √(2gh)), and our readings came within 5% of that. I also wired the launcher’s motor driver and funnel motor for the Arduino control code.</p>
   <div class="grid g3" style="margin-top:16px">
     <div class="card"><h3>Speed from two planes</h3><p>The hoop had two sensing planes, four IR break beams each. The Arduino timestamped each plane in microseconds and divided the distance between the planes by the time between them to get the ball’s speed.</p></div>
     <div class="card"><h3>Interrupts for fast balls</h3><p>One beam on each plane was wired to a hardware interrupt, so a fast ball got timestamped the instant it broke the beam. The other beams were polled as a backup. A pass only counted if the entrance plane tripped before the exit plane, and a 200 ms lockout kept one ball from counting twice.</p></div>
@@ -162,6 +162,14 @@
   </div>
 </section>
 
+<section>
+  <p class="eb">Version 2</p>
+  <h2>What I’d design in from the start</h2>
+  <div class="grid g2">
+    <div class="card"><h3>An adjustable, enclosed launcher mount</h3><p>A mount that sets the launch angle with a simple adjustment instead of a reprint, designed around the wiring from day one so the electronics are enclosed and the wires routed and covered.</p></div>
+    <div class="card"><h3>A camera built into the system</h3><p>Our counting camera looked down on the system from above, which was awkward to set up. I’d build it in low, on the floor under the hoop, and position it so it catches every ball, even the fastest ones.</p></div>
+  </div>
+</section>
 <section>
   <p class="eb">Takeaways</p>
   <h2>What I took away</h2>
