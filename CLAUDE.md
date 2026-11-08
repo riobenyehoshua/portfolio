@@ -32,6 +32,9 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
 
 ## Conventions
 - Ask Rio before any big design change (layout, colors, fonts). Wording and small fixes are fine.
+- Only real photos/CAD/screenshots of Rio's work: no AI-generated images (the ping pong layout diagram was removed
+  for this reason). Ping pong launcher: red parts = 3D-printed flywheels; other printed parts = motor/flywheel
+  mounts; laser-cut cardboard enclosure covers the motors and wiring (mounts and enclosure are different things).
 - Don't invent facts (dates, numbers, roles). Sources of truth: resume PDF and the reports in `source/reports/`.
 - New images: put in `images/<project>/`, max ~2000px long edge, JPEG for photos, PNG for CAD/graphs.
   Use `loading="lazy"` unless it's visible when the page opens. Do NOT add width/height attributes to `<img>`:
