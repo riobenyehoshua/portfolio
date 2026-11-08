@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="css/style.css?v=7">
 </head>
-<body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks"><span class="bars" aria-hidden="true"></span>Menu</button><div class="links" id="navlinks"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Ping Pong Recirculation System</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="index.html#shop">In the shop</a><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-pingpong" id="p-pingpong">
+<body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks"><span class="bars" aria-hidden="true"></span>Menu</button><div class="links" id="navlinks"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Ping Pong Recirculation System</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="shop.html">In the shop</a><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-pingpong" id="p-pingpong">
 
 <header class="hero">
   <div>
@@ -49,7 +49,7 @@
     <div>
       <p>Launch balls through a hoop, recirculate them without human help, and count valid passes. The ranking came down to one thing: how many balls made it through.</p>
       <ul>
-        <li>Hoop opening 6″ × 6″, placed 12″ out and 12″ up from the launch point</li>
+        <li>Hoop opening 6″ × 6″, placed at least 12″ out and 12″ up from the launch point</li>
         <li>Only 6 balls; no tubes or funnels guiding balls at the hoop</li>
         <li>Launcher and hoop can’t be rigidly connected; everything fits one desk</li>
       </ul>
@@ -70,11 +70,11 @@
 <section>
   <p class="eb">What we did differently</p>
   <h2>Launch, recover, reload, repeat</h2>
-  <p>Many teams returned their balls through enclosed tubes. We let ours fly. The open path risks stray balls, but it recirculates much faster.</p>
+  <p>Other teams returned their balls through enclosed tubes. We let ours fly. The open path risks stray balls, but it recirculates much faster.</p>
   <div class="grid g2">
-    <div class="card"><h3>Two-wheel flywheel launcher</h3><p>Two 3D-printed wheels with a grip surface pinch each ball from both sides for fast, repeatable launches at about 5 m/s, measured frame by frame from the 60-second run video.</p></div>
+    <div class="card"><h3>Two-wheel flywheel launcher</h3><p>Two 3D-printed wheels with a grip surface pinch each ball from both sides for fast, repeatable launches, with a speed of approximately 5 m/s, measured by our camera system.</p></div>
     <div class="card"><h3>Open bounce-back return</h3><p>A ball goes through the hoop, rebounds off a curved backboard and drops into a net, and a funnel and small feed motor send it back to the wheels. That removed the slowest part of recirculation.</p></div>
-    <div class="card"><h3>Camera counting, not beam-break</h3><p>Our first hoop used IR beams, but it missed very fast balls and would also have counted balls on their way back. A thin hoop with a camera on a teammate’s laptop solved both, and the laptop sent the launcher its start and stop signals.</p></div>
+    <div class="card"><h3>Camera counting, not beam-break</h3><p>Our first hoop used IR beams, but it missed very fast balls and would also have counted balls on their way back. A thin hoop with a camera connected to a teammate’s laptop solved both, and the laptop sent the launcher its start and stop signals.</p></div>
     <div class="card"><h3>Catch net with slack</h3><p>A slightly loose net absorbs the energy of returning balls, so we never had to slow the launcher to keep up.</p></div>
   </div>
   <figure style="margin-top:20px"><video data-autoplay muted loop playsinline controls preload="none" poster="images/pingpong/video-launch-poster.jpg" src="videos/pingpong-launch.mp4"></video><figcaption>Side view of a launch through the hoop.</figcaption></figure>
@@ -86,9 +86,9 @@
   <h2>The launcher, iteration by iteration</h2>
   <div class="grid cad">
     <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-mount-funnel.jpg" alt="CAD of the launcher mount and funnel"><figcaption>Launcher mount and funnel</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-funnel.jpg" alt="CAD of the funnel"><figcaption>Funnel and mount</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-two-wheel-bracket.jpg" alt="CAD of the two-wheel bracket"><figcaption>Two-wheel bracket</figcaption></figure>
-    <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-side-plate.jpg" alt="CAD of the mount side plate"><figcaption>Mount side plate</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-funnel.jpg" alt="CAD of the ball feeder funnel"><figcaption>Ball feeder funnel</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-two-wheel-bracket.jpg" alt="CAD of the flywheel mount bracket"><figcaption>Flywheel mount bracket</figcaption></figure>
+    <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-side-plate.jpg" alt="CAD of the mount top plate"><figcaption>Mount top plate</figcaption></figure>
     <figure><img loading="lazy" decoding="async" src="images/pingpong/cad-flywheel.jpg" alt="CAD of a flywheel"><figcaption>Textured flywheel</figcaption></figure>
   </div>
   <div class="grid g3 sq" style="margin-top:16px">
@@ -102,7 +102,7 @@
 <section>
   <p class="eb">Electronics</p>
   <h2>Prototyping the sensing and drive circuits</h2>
-  <p>Before the team switched to camera counting, I built an 8-sensor IR hoop that measured ball speed to within ±5%. To check it, we dropped balls from rest 1 ft above the horizontal hoop: free fall predicts about 2.4 m/s (v = √(2gh)).</p>
+  <p>Before the team switched to camera counting, I built an 8-sensor IR hoop that measured ball speed in m/s to within ±5%. To check it, we dropped balls from rest 1 ft above the horizontal hoop: free fall predicts about 2.4 m/s (v = √(2gh)).</p>
   <div class="grid g3" style="margin-top:16px">
     <div class="card"><h3>Speed from two planes</h3><p>Two planes of four IR break beams. The Arduino timestamped each plane in microseconds and divided the distance between them by the time.</p></div>
     <div class="card"><h3>Interrupts for fast balls</h3><p>One beam per plane used a hardware interrupt to timestamp fast balls instantly, with the others polled as backup. A pass counted only if the entrance plane tripped first, and a 200 ms lockout prevented double counts.</p></div>
@@ -111,7 +111,7 @@
   <div class="grid g3 sq" style="margin-top:22px">
     <figure><img src="images/pingpong/ir-hoop-prototype.jpg" alt="IR hoop sensor prototype wired to an Arduino" loading="lazy" decoding="async"><figcaption>The 8-sensor IR hoop prototype.</figcaption></figure>
     <figure><img src="images/pingpong/launcher-wiring.jpg" alt="Launcher flywheel motors wired to the motor driver" loading="lazy" decoding="async"><figcaption>Launcher motors and driver.</figcaption></figure>
-    <figure><img src="images/pingpong/wiring-enclosure.jpg" alt="Wiring inside an enclosure" loading="lazy" decoding="async"><figcaption>Wiring in an enclosure.</figcaption></figure>
+    <figure><img src="images/pingpong/wiring-enclosure.jpg" alt="Wiring inside the initial IR sensor hoop" loading="lazy" decoding="async"><figcaption>Wiring in the initial IR sensor hoop.</figcaption></figure>
   </div>
 </section>
 
@@ -120,8 +120,8 @@
   <h2>What broke, and what fixed it</h2>
   <div class="grid g2">
     <div class="card"><h3>Motors shook the mounts apart</h3><p>Sustained vibration broke the printed motor mounts. I added washers for smoother spinning and kept iterating the mount until it survived full runs.</p></div>
-    <div class="card"><h3>The wheel grip kept failing</h3><p>Rubber bands on the flywheels fell off or snapped at speed. A high-grip textured sticker material, superglued on, stayed put.</p></div>
-    <div class="card"><h3>Balls escaped the net</h3><p>Fast balls bounced out of the first fabric catcher. I switched to the net and added reinforcing panels where testing showed balls escaping.</p></div>
+    <div class="card"><h3>The wheel grip kept failing</h3><p>Rubber bands on the flywheels fell off or snapped after repeated use at high speeds. A high-grip textured sticker material, superglued on, stayed put.</p></div>
+    <div class="card"><h3>Balls escaped the net</h3><p>Fast balls bounced out of the first fabric catcher. We switched to the net and added reinforcing panels where testing showed balls escaping.</p></div>
     <div class="card"><h3>Jams in the funnel</h3><p>Too many balls were entering the funnel at once. A small feed motor helped early on, and once launches were fast enough, balls never queued up.</p></div>
   </div>
   <div class="row crop" style="margin-top:20px">
@@ -149,7 +149,7 @@
   <p class="eb">Version 2</p>
   <h2>What I’d design in from the start</h2>
   <div class="grid g2">
-    <div class="card"><h3>Enclosure and wiring, planned together</h3><p>I’d plan the wiring and the laser-cut cardboard enclosure over the motors together from the start, so everything routes in cleanly and the launch angle is easy to adjust.</p></div>
+    <div class="card"><h3>Enclosure and wiring, planned together</h3><p>I’d plan the wiring and the motor enclosure together from the start, so everything routes in cleanly and the launch angle is easy to adjust. I’d also 3D print the enclosure or use something sturdier than our laser-cut cardboard.</p></div>
     <div class="card"><h3>A camera built into the system</h3><p>Our counting camera looked down from above, which was awkward to set up. I’d build it in low, on the floor under the hoop, positioned to catch every ball.</p></div>
   </div>
 </section>
@@ -159,7 +159,7 @@
   <ul>
     <li><b>Failures drove the design.</b> Each fix above came from watching real runs.</li>
     <li><b>Measuring fast events is hard.</b> In the official competition run, our camera counted at most 86 of the 110 passes.</li>
-    <li><b>Speed over safety only works</b> if you engineer for the failure modes.</li>
+    <li><b>Speed has a cost.</b> Our open return was faster but riskier, so the net had to be built to handle what went wrong.</li>
   </ul>
   <p class="mut">Team: Heywood Chalom, Jake Goldmann, Gabi Jabbour, and me. My teammates built the camera counting and laptop display; I focused on the launcher and return system.</p>
 </section>

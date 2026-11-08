@@ -5,11 +5,11 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
 
 ## Structure
 - Plain HTML + one shared stylesheet (`css/style.css`). No build step, no framework. Keep it that way.
-- Pages: `index.html`, `ping-pong.html`, `load-cell-scale.html`, `plantplex.html`. The nav and footer
-  contact are repeated in each page: a nav/contact change must be made in all four.
+- Pages: `index.html`, `ping-pong.html`, `load-cell-scale.html`, `plantplex.html`, `shop.html`. The nav and footer
+  contact are repeated in each page: a nav/contact change must be made in all five.
 - Project order (dropdown, pager "Next project" links): ping pong -> load cell scale -> PlantPlex -> back to ping pong.
 - Homepage order: intro, Projects, Currently working on (`#current`: Crazyflie drones, Motorsports; amber
-  "In progress" label, So far / Next lines), In the shop (`#shop`: cardboard chair + metal casting, photos in `images/shop/`),
+  "In progress" label, So far / Next lines), In the shop (`#shop`: preview cards linking to `shop.html`, which holds every build in full; photos in `images/shop/`),
   About, Skills, Beyond the classroom, Contact. The old standalone shop page lives in
   `source/old-versions/rio-portfolio-site.zip`; its circuit photos now sit on the ping pong page (Electronics section).
 - Casting text: test and result come from `source/reports/dogbone-tensile-test-2026-11-04` (Instron export). The metal is
@@ -41,7 +41,7 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
   Use `loading="lazy"` unless it's visible when the page opens. Do NOT add width/height attributes to `<img>`:
   with a stale cached stylesheet they stretch photos (this happened once). Sizing comes from CSS
   (aspect-ratio + object-fit), same as the original design.
-- After changing `css/style.css` or `js/site.js`, bump the `?v=N` on their links in all four pages, so
+- After changing `css/style.css` or `js/site.js`, bump the `?v=N` on their links in all five pages, so
   browsers never combine a cached old stylesheet with new pages.
 - Videos: `data-autoplay muted loop playsinline controls preload="none"` with a poster image.
 

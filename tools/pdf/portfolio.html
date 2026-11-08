@@ -120,22 +120,22 @@ figure{margin:0}figcaption{font-size:7.5pt;color:var(--mut);margin-top:3px}
           <li>Designed and 3D-printed the launcher mounts and funnel through many revisions</li>
           <li>Iterated the catch net and its reinforcement through repeated testing</li>
           <li>Wrote the launcher control code: two flywheel motors on an L298N driver, a MOSFET-switched funnel motor, one-button start</li>
-          <li>Built an 8-sensor IR hoop that measured ball speed to within ±5%, checked against balls dropped from rest 1 ft above it (free fall: about 2.4 m/s)</li>
+          <li>Built an 8-sensor IR hoop that measured ball speed in m/s to within ±5%, checked against balls dropped from rest 1 ft above it (free fall: about 2.4 m/s)</li>
         </ul>
       </div>
     </div>
     <div>
       <p class="sec">Design decisions</p>
       <div class="c3">
-        <div class="box"><h3>Open return, not a tube</h3><p>Most teams used enclosed tubes. Ours rebounds off a curved backboard into a net and a funnel feeds the wheels. Riskier, but it removed the slowest part of recirculation.</p></div>
-        <div class="box"><h3>Two-wheel flywheel</h3><p>Two printed wheels with a grip surface pinch each ball from both sides, for fast, repeatable launches at about 5 m/s (from run video). The funnel starts 2.5 s after the wheels so they are at speed first.</p></div>
+        <div class="box"><h3>Open return, not a tube</h3><p>Other teams used enclosed tubes. Ours rebounds off a curved backboard into a net and a funnel feeds the wheels. Riskier, but it removed the slowest part of recirculation.</p></div>
+        <div class="box"><h3>Two-wheel flywheel</h3><p>Two printed wheels with a grip surface pinch each ball from both sides. Speed approximately 5 m/s, measured by our camera system. The funnel starts 2.5 s after the wheels so they are at speed first.</p></div>
         <div class="box"><h3>Speed from two planes</h3><p>The IR hoop timed each ball between two planes of four beams, using hardware interrupts for microsecond timestamps and a 200 ms lockout so no ball counted twice.</p></div>
       </div>
     </div>
     <div>
       <p class="sec">What broke, and what fixed it</p>
       <div class="cols">
-        <div class="box"><p><b>Motors shook the mounts apart.</b> Added washers for smoother spinning and kept iterating the mount until it survived full runs.</p><p><b>Wheel grip kept failing.</b> Rubber bands snapped at speed; a superglued high-grip textured material held.</p></div>
+        <div class="box"><p><b>Motors shook the mounts apart.</b> Added washers for smoother spinning and kept iterating the mount until it survived full runs.</p><p><b>Wheel grip kept failing.</b> Rubber bands snapped with repeated use; a superglued high-grip material held.</p></div>
         <div class="box"><p><b>Balls escaped the net.</b> Switched to a net with slack to absorb energy, and reinforced the spots where testing showed escapes.</p><p><b>Jams in the funnel.</b> A small feed motor helped; once launches were fast enough, balls never queued up.</p></div>
       </div>
     </div>
@@ -212,8 +212,8 @@ figure{margin:0}figcaption{font-size:7.5pt;color:var(--mut);margin-top:3px}
       <p class="sec">Three versions, each fixing the last</p>
       <div class="c3">
         <div class="box"><h3>1. Proof of concept</h3><p>A small self-watering microgreen box. Wall, floor and ceiling mounts were ruled out for a self-supported grid that pods hang from.</p></div>
-        <div class="box"><h3>2. Capillary pods</h3><p>A wicking column in each pod, using its chamfered corner as a reservoir. Manual refills chosen over a pump: no noise, energy or water cost, and fully modular parts.</p></div>
-        <div class="box"><h3>3. Final design</h3><p>A double-sided grid of 24 removable pods, half on each side to balance the weight, with detachable LED lights so it works in any room.</p></div>
+        <div class="box"><h3>2. Capillary pods</h3><p>A wicking column and water reservoir in each pod. Manual refills chosen over a pump: no noise, energy or water cost, and fully modular parts.</p></div>
+        <div class="box"><h3>3. Final design</h3><p>A double-sided grid of 24 modular pods that can be removed, replaced or moved around the grid for customization and easy upkeep, half on each side to balance the weight, with detachable LED lights.</p></div>
       </div>
     </div>
     <div class="cols" style="grid-template-columns:1fr 1fr 1fr;gap:12px">
