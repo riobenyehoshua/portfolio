@@ -22,6 +22,11 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
   Rio edits it in Google Docs. Publish it only via `tools\update-resume.cmd`, which strips phone numbers
   (`tools/strip_phone.py`, PyMuPDF in the gitignored `tools/.venv`). Rio's phone number must never be published.
 
+- PDF portfolio (4 Letter pages, for applications that want a PDF): source `tools/pdf/portfolio.html`
+  (images via `../../images/`), built to `files/Rio-Ben-Yehoshua-Portfolio.pdf` by `tools\build-pdf.cmd`
+  (headless Edge). It repeats site content: when project facts change on the site, update it too, rebuild,
+  and check every page still fits (no overflow into the footer).
+- `preview-*.html` in the root are gitignored mockups (e.g. `preview-hero.html`, homepage video idea). Not live.
 - `TODO.md` (gitignored, private) is Rio's checklist of things to add later. Read it at the start of a session;
   when Rio says "later" about something, add it there, and tick items off when they're done.
 

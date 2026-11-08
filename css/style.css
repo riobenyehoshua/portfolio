@@ -157,3 +157,5 @@ details.more-data summary{cursor:pointer;font-weight:700;color:var(--accent);mar
 .steps div{display:grid;grid-template-columns:64px 1fr;gap:12px}
 .steps dt{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-top:3px}
 .steps dd{margin:0;font-size:15px}
+.kpi{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 12px;padding-left:12px;border-left:3px solid var(--sh,var(--main));font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.kpi b{display:block;font-family:Inter,system-ui,sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;text-transform:none;color:var(--ink);line-height:1.15}

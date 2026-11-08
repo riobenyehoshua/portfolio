@@ -12,7 +12,7 @@
 <meta property="og:description" content="An autonomous launch-and-recover machine that scored 110 passes in 60 seconds and placed 1st in class.">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks"><span class="bars" aria-hidden="true"></span>Menu</button><div class="links" id="navlinks"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Ping Pong Recirculation System</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="index.html#shop">In the shop</a><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-pingpong" id="p-pingpong">
 
@@ -120,7 +120,12 @@
   <p class="eb">Electronics</p>
   <h2>Prototyping the sensing and drive circuits</h2>
   <p>Before the team switched to camera counting, I built an 8-sensor IR hoop prototype that measured ball velocity to within ±5%. I also wired the launcher’s motor driver and funnel motor for the Arduino control code.</p>
-  <div class="grid g3 sq" style="margin-top:16px">
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card"><h3>Speed from two planes</h3><p>The hoop had two sensing planes, four IR break beams each. The Arduino timestamped each plane in microseconds and divided the distance between the planes by the time between them to get the ball’s speed.</p></div>
+    <div class="card"><h3>Interrupts for fast balls</h3><p>One beam on each plane was wired to a hardware interrupt, so a fast ball got timestamped the instant it broke the beam. The other beams were polled as a backup. A pass only counted if the entrance plane tripped before the exit plane, and a 200 ms lockout kept one ball from counting twice.</p></div>
+    <div class="card"><h3>Launcher start-up</h3><p>One button spins up both flywheels through an L298N motor driver. The funnel motor, switched by a MOSFET, starts 2.5 seconds later, so the wheels are already at speed when the first ball reaches them.</p></div>
+  </div>
+  <div class="grid g3 sq" style="margin-top:22px">
     <figure><img src="images/pingpong/ir-hoop-prototype.jpg" alt="IR hoop sensor prototype wired to an Arduino" loading="lazy" decoding="async"><figcaption>The 8-sensor IR hoop prototype.</figcaption></figure>
     <figure><img src="images/pingpong/launcher-wiring.jpg" alt="Launcher flywheel motors wired to the motor driver" loading="lazy" decoding="async"><figcaption>Launcher motors and driver.</figcaption></figure>
     <figure><img src="images/pingpong/wiring-enclosure.jpg" alt="Wiring inside an enclosure" loading="lazy" decoding="async"><figcaption>Wiring in an enclosure.</figcaption></figure>

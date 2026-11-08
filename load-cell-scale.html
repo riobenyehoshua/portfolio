@@ -12,7 +12,7 @@
 <meta property="og:description" content="A prototype digital scale: a custom enclosure, load cells, an HX711 amplifier, Arduino code and an LCD, with tare and gram/ounce controls.">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks"><span class="bars" aria-hidden="true"></span>Menu</button><div class="links" id="navlinks"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="index.html#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Ping Pong Recirculation System</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="index.html#shop">In the shop</a><a href="index.html#skills">Skills</a><a href="index.html#activities">Beyond the Classroom</a><a href="index.html#contact">Contact</a></div></nav><div class="page t-scale" id="p-loadcell"><header class="hero">
   <div>
@@ -80,7 +80,7 @@
     <ol>
       <li><b>Strain.</b> The four load cells bend slightly under the weight and their strain gauges change resistance. Wired together, they form a full bridge.</li>
       <li><b>Amplify.</b> The HX711 boosts the tiny signal and converts it to a 24-bit digital value.</li>
-      <li><b>Calculate.</b> The Arduino applies a calibration factor to get mass in grams.</li>
+      <li><b>Calculate.</b> The Arduino divides the raw reading by a calibration factor (20.067 counts per gram) to get mass in grams.</li>
       <li><b>Display.</b> The LCD shows grams or ounces over I2C, and the serial monitor prints each reading.</li>
     </ol>
     <figure><img loading="lazy" decoding="async" src="images/loadcell/wiring.jpg" alt="Arduino, HX711 and wiring inside the scale base"><figcaption>The Arduino, HX711 and wiring inside the base.</figcaption></figure>
@@ -103,7 +103,7 @@
   <p class="eb">Software</p>
   <h2>Making the readings steady and usable</h2>
   <div class="grid g2">
-    <div class="card"><h3>Averaging</h3><p>Each displayed weight averages many readings, about one update per second. That settles the display against random noise but still responds quickly when the load changes.</p></div>
+    <div class="card"><h3>Averaging, and a trade-off</h3><p>Each displayed weight is a fresh average of the latest batch of readings, about one update per second. A running average would look smoother, but it blends in old values. A fresh batch filters the noise and still responds as soon as the load changes.</p></div>
     <div class="card"><h3>Zero threshold</h3><p>Tiny readings show as 0.0, so an empty scale rests at zero instead of flickering around it.</p></div>
     <div class="card"><h3>Tare</h3><p>A button press stores a new zero from a 30-sample average and clears the averaging data, so old readings never carry over.</p></div>
     <div class="card"><h3>Units and debounce</h3><p>Weight is always calculated in grams, then converted to ounces only for display. Button debouncing stops one press from counting twice.</p></div>
