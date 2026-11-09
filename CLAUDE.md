@@ -9,7 +9,7 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
   contact are repeated in each page: a nav/contact change must be made in all five.
 - Project order (dropdown, pager "Next project" links): ping pong -> load cell scale -> PlantPlex -> back to ping pong.
 - Homepage order: intro, Projects, Currently working on (`#current`: Crazyflie drones, Motorsports; amber
-  "In progress" label, So far / Next lines), In the shop (`#shop`: preview cards linking to `shop.html`, which holds every build in full; photos in `images/shop/`),
+  "In progress" label, So far / Next lines), Workshop Builds (`#shop`: preview cards linking to `shop.html`, which holds every build in full; photos in `images/shop/`),
   About, Skills, Beyond the classroom, Contact. The old standalone shop page lives in
   `source/old-versions/rio-portfolio-site.zip`; its circuit photos now sit on the ping pong page (Electronics section).
 - Casting text: test and result come from `source/reports/dogbone-tensile-test-2026-11-04` (Instron export). The metal is
