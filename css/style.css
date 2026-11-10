@@ -144,7 +144,7 @@ details.more-data summary{cursor:pointer;font-weight:700;color:var(--accent);mar
 .shopcard .lead{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:0;box-shadow:none}
 .shopcard .body{padding:20px 22px 22px}
 .thumbs{display:grid;gap:10px;margin:16px 0 4px}
-.thumbs.t4{grid-template-columns:repeat(4,1fr)}.thumbs.t2{grid-template-columns:repeat(2,1fr)}
+.thumbs.t3{grid-template-columns:repeat(3,1fr)}.thumbs.t4{grid-template-columns:repeat(4,1fr)}.thumbs.t2{grid-template-columns:repeat(2,1fr)}
 .thumbs figure img,.thumbs figure video{aspect-ratio:1/1;object-fit:cover;box-shadow:none}
 .thumbs a{display:block}.thumbs a:hover img,.thumbs a:hover video{filter:brightness(1.06)}
 .thumbs figcaption{font-size:12px;margin-top:6px;line-height:1.35}
