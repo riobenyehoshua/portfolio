@@ -23,8 +23,8 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
   Rio wants projects clearly labeled as projects; don't fold them into a general "Work" dropdown.
 - Page footer is just the email in large type with LinkedIn and Resume buttons (no "Get in touch" heading).
   Resume links say "Resume", never "Resume (PDF)".
-- Credit accurately: load cell scale, Rio planned and sketched the enclosure and a teammate did the CAD. PlantPlex,
-  Rio worked out the pod shape with teammates, a teammate drew the panels in CAD, Rio laser-cut and built them;
+- Credit accurately: load cell scale, Rio planned and sketched the enclosure; a teammate did the CAD and the 3D printing. PlantPlex,
+  Rio worked out the pod shape with teammates, a teammate drew the panels in CAD, Rio laser-cut and built them (teammates did the wicking system);
   the grid frame was store-bought and assembled.
 - `source/` is gitignored and private: original photos (`source/original-photos`, with a CSV mapping), the reports,
   and the original single-file artifact. Never publish files from it without asking.
