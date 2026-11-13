@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rio Ben-Yehoshua | Portfolio</title>
 <meta name="description" content="Mechanical engineering student at The Cooper Union. Projects: an autonomous ball launcher, a digital load cell scale, and a modular indoor farming grid.">
-<meta name="theme-color" content="#12161c">
+<meta name="theme-color" content="#0e1a2b">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rio Ben-Yehoshua">
 <meta property="og:title" content="Rio Ben-Yehoshua | Mechanical Engineering Portfolio">
@@ -19,81 +19,112 @@
 <meta name="twitter:description" content="Mechanical engineering student at The Cooper Union. Projects: an autonomous ball launcher, a digital load cell scale, and a modular indoor farming grid.">
 <meta name="twitter:image" content="https://riobenyehoshua.github.io/portfolio/images/og.jpg">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="css/style.css?v=10">
 </head>
-<body><div class="w"><nav class="nav"><a class="brand" href="index.html">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false" aria-controls="navlinks"><span class="bars" aria-hidden="true"></span>Menu</button><div class="links" id="navlinks"><a href="index.html">Home</a><div class="dd"><a class="ddt" href="#projects">Projects</a><div class="menu"><a href="ping-pong.html" style="--k:var(--c1)">Ping Pong Recirculation System</a><a href="load-cell-scale.html" style="--k:var(--c2)">Digital Load Cell Scale</a><a href="plantplex.html" style="--k:var(--c3)">PlantPlex</a></div></div><a href="shop.html">Workshop Builds</a><a href="#skills">Skills</a><a href="#activities">Beyond the Classroom</a><a href="#contact">Contact</a></div></nav><div class="page t-home" id="p-home"><header class="intro">
-    <p class="eb">Portfolio</p>
-    <div class="who"><img src="images/headshot.jpg" alt="Portrait of Rio Ben-Yehoshua"><h1>Rio Ben-Yehoshua</h1></div>
-    <p class="lede">Mechanical engineering student at The Cooper Union in New York City, graduating May 2029.</p>
-    <p class="seek">Looking for a Summer 2027 internship in mechanical design, controls and mechatronics.</p>
-    <div class="pills"><span class="pill">GPA 3.77</span><span class="pill">Dean’s List</span><span class="pill">Half-Tuition Scholarship</span></div>
-    <p class="sublinks"><a class="btn" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a><a class="btn alt" href="mailto:rio.benyehoshua@cooper.edu">Email</a><a class="btn alt" href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a></p>
-</header>
-<section id="projects">
-  <p class="eb">Projects</p>
-  <h2>Selected work</h2>
-  <div class="proj">
-    <a class="card c-red" href="ping-pong.html"><div class="media"><img src="images/pingpong/hero.jpg" alt="Top-down view of the ping pong launcher system"><span class="cardtag">Spring 2026 · 1st place</span></div><div class="body"><p class="kpi"><span><b>110</b> passes in 60 s</span><span><b>1st</b> in class</span></p><h3>Ping Pong Recirculation System</h3><p>An autonomous machine that launches, catches and reloads six balls with no human touch. I worked on the flywheel launcher and the ball return loop.</p><div class="chips"><span class="chip">Flywheel launcher</span><span class="chip">3D printing</span><span class="chip">Net return</span><span class="chip">Arduino</span></div><p class="more">View project →</p></div></a>
-    <a class="card c-blue" href="load-cell-scale.html"><div class="media"><img src="images/loadcell/hero.jpg" alt="Digital load cell scale with LCD"><span class="cardtag">Spring 2026</span></div><div class="body"><p class="kpi"><span><b>0.84%</b> full-scale error</span><span><b>R² = 0.9999</b> linearity</span></p><h3>Digital Load Cell Scale</h3><p>A digital scale built from four load cells, a signal amplifier and Arduino code in a custom enclosure, with tare and gram/ounce controls.</p><div class="chips"><span class="chip">CAD</span><span class="chip">Arduino</span><span class="chip">Load cells</span><span class="chip">LCD display</span></div><p class="more">View project →</p></div></a>
-    <a class="card c-green" href="plantplex.html"><div class="media"><img src="images/plantplex/hero-grid.jpg" alt="PlantPlex grid prototype with planter pods"><span class="cardtag">Fall 2025</span></div><div class="body"><p class="kpi"><span><b>72 h</b> self-watering</span><span><b>0</b> pumps</span></p><h3>PlantPlex</h3><p>A self-sufficient indoor farming grid for small apartments, built for people with no gardening experience: removable pods that wick water by capillary action, with no pump. I designed and built the physical prototype.</p><div class="chips"><span class="chip">Prototyping</span><span class="chip">Capillary wicking</span><span class="chip">Team of 7</span></div><p class="more">View project →</p></div></a>
+<body>
+<nav class="nav"><div class="wrap"><a class="brand" href="#top">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false">Menu</button><div class="links"><a href="#top">Home</a><div class="dd"><a href="#projects" data-s="projects">Projects ▾</a><div class="menu"><div><a href="ping-pong.html">Ping Pong Recirculation System<small>Autonomous launch-and-catch machine</small></a><a href="load-cell-scale.html">Digital Load Cell Scale<small>Arduino scale built on four load cells</small></a><a href="plantplex.html">PlantPlex<small>Self-watering indoor farming grid</small></a><a class="sep" href="#projects">See all projects →</a></div></div></div><a href="#current">Current work</a><a href="#shop">Builds</a><div class="dd"><a href="#profile" data-s="profile skills activities">About ▾</a><div class="menu sm"><div><a href="#profile">About me</a><a href="#skills">Skills</a><a href="#activities">Beyond the classroom</a></div></div></div><a href="#contact">Contact</a><a class="cta" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a></div></div></nav>
+
+<header class="hero" id="top"><div class="wrap"><div class="herobox">
+  <h1>Rio <em>Ben-Yehoshua</em></h1>
+  <p class="sub">Mechanical Engineering Student · The Cooper Union · Class of 2029</p>
+  <div class="herogrid">
+    <div>
+      <div class="who"><img src="images/headshot.jpg" alt="Portrait of Rio Ben-Yehoshua"><p class="seek">Seeking a Summer 2027 internship in mechanical design, controls and mechatronics.</p></div>
+      <div class="btns"><a class="btn solid" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a><a class="btn" href="mailto:rio.benyehoshua@cooper.edu">Email</a><a class="btn" href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a></div>
+      <div class="pills"><span class="pill">GPA 3.77</span><span class="pill">Dean’s List</span><span class="pill">Scholarship</span></div>
+    </div>
+    <figure class="heromedia"><a href="ping-pong.html"><video autoplay muted loop playsinline preload="auto" poster="images/pingpong/video-side-view-poster.jpg" src="videos/pingpong-side-view.mp4" aria-label="The ping pong recirculation system running"></video><figcaption>110 passes in 60 s · 1st in class →</figcaption></a></figure>
   </div>
-</section>
-<section id="current">
-  <p class="eb">Currently working on</p>
-  <h2>In progress</h2>
-  <div class="grid g2">
-    <div class="card cur" style="--sh:var(--c2)"><span class="status">In progress · since Oct 2026</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="3"/><circle cx="19" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M7.5 7.5 10 10M16.5 7.5 14 10M7.5 16.5 10 14M16.5 16.5 14 14"/><rect x="10" y="10" width="4" height="4" rx="1"/></svg></span><h3>Crazyflie drone swarm</h3><span class="role">With a professor · faculty project</span><p>I’m working with a professor to program a swarm of Crazyflie nano-drones to fly coordinated formations. Each drone tracks its own position in the room with the Lighthouse system, and I program the flights in Python. Where it could lead: a swarm that acts out physics models, such as planetary orbits and a mass-spring system, and responds to a person’s gestures in near real time.</p><div class="thumbs t3"><figure><a href="images/drones/crazyflie-lighthouse-deck.jpg"><img src="images/drones/crazyflie-lighthouse-deck.jpg" alt="Crazyflie nano-drone with green propellers and a Lighthouse positioning deck on top" loading="lazy" decoding="async"></a><figcaption>Lighthouse deck on top: four sensors that see the base stations</figcaption></figure><figure><a href="images/drones/crazyflie.jpg"><img src="images/drones/crazyflie.jpg" alt="Crazyflie 2.1 nano-drone on a concrete floor" loading="lazy" decoding="async"></a><figcaption>Crazyflie 2.1, about 10 cm across</figcaption></figure><figure><a href="images/drones/lighthouse-base-station.jpg"><img src="images/drones/lighthouse-base-station.jpg" alt="Lighthouse base station on a pole inside a netted flight area" loading="lazy" decoding="async"></a><figcaption>Lighthouse base station, netted flight area</figcaption></figure></div><dl class="steps"><div><dt>So far</dt><dd>Calibrated the drones and the Lighthouse positioning system they use to sense where they are; programming them in Python.</dd></div><div><dt>Next</dt><dd>Fly the first formations. Flight videos coming soon.</dd></div></dl><div class="chips"><span class="chip">Python</span><span class="chip">Crazyflie</span><span class="chip">Lighthouse positioning</span><span class="chip">Drone swarms</span><span class="chip">Formation flight</span></div></div>
-    <div class="card cur" style="--sh:var(--c1)"><span class="status">In progress · since Spring 2026</span><span class="ico logo flush" style="height:64px"><img src="images/logo-motorsports.png" alt="Cooper Union Motorsports logo" loading="lazy" decoding="async"></span><h3>Motorsports Club (Formula SAE)</h3><span class="role">Body Cockpit Safety team · pedal box</span><p>I’m working on the pedal box for the team’s Formula SAE race car, the assembly that holds the driver’s pedals and their master cylinders. I compare my SolidWorks model against the real assembly, update the CAD to match, and help build the parts.</p><dl class="steps"><div><dt>So far</dt><dd>Modeled the pedal box mount in SolidWorks and built part of the new pedal box.</dd></div><div><dt>Now</dt><dd>Making the master cylinders from the old pedal box work with the new design: mounting them, and solving the fit issues that come up as it all comes together.</dd></div></dl><div class="chips"><span class="chip">SolidWorks</span><span class="chip">Formula SAE</span><span class="chip">Assembly</span><span class="chip">Design for fit</span></div></div>
+</div></div></header>
+
+<div id="projects">
+  <div class="wrap stitle"><span class="mono">01</span><h2>Projects</h2></div>
+
+  <a class="band p-red" id="pingpong" href="ping-pong.html"><div class="wrap">
+    <div class="media"><img src="images/pingpong/hero.jpg" alt="Top-down view of the ping pong launcher system" style="object-position:50% 70%"></div>
+    <div class="rv"><span class="count mono">Spring 2026</span><h3>Ping Pong Recirculation System</h3><div class="stat"><span class="big" data-n="110">110</span><span class="unit">passes in 60 s<br>1st in class</span></div>
+      <p>An autonomous machine that launches, catches and reloads six balls with no human touch. I worked on the flywheel launcher and the ball return loop.</p>
+      <div class="chips"><span class="chip">Flywheel launcher</span><span class="chip">3D printing</span><span class="chip">Net return</span><span class="chip">Arduino</span></div><span class="go">View project <span>→</span></span></div>
+  </div></a>
+
+  <a class="band flip p-blue" id="loadcell" href="load-cell-scale.html"><div class="wrap">
+    <div class="media"><img src="images/loadcell/hero.jpg" alt="Digital load cell scale with LCD" loading="lazy"></div>
+    <div class="rv"><span class="count mono">Spring 2026</span><h3>Digital Load Cell Scale</h3><div class="stat"><span class="big"><span data-n="0.84">0.84</span>%</span><span class="unit">full-scale error<br>R² = 0.9999 linearity</span></div>
+      <p>A digital scale built from four load cells, a signal amplifier and Arduino code in a custom enclosure, with tare and gram/ounce controls.</p>
+      <div class="chips"><span class="chip">Enclosure design</span><span class="chip">Arduino</span><span class="chip">Load cells</span><span class="chip">LCD display</span></div><span class="go">View project <span>→</span></span></div>
+  </div></a>
+
+  <a class="band p-green" id="plantplex" href="plantplex.html"><div class="wrap">
+    <div class="media"><img src="images/plantplex/hero-grid.jpg" alt="PlantPlex grid prototype with planter pods" loading="lazy" style="object-position:50% 62%"></div>
+    <div class="rv"><span class="count mono">Fall 2025</span><h3>PlantPlex</h3><div class="stat"><span class="big"><span data-n="72">72</span> h</span><span class="unit">self-watering<br>no pumps</span></div>
+      <p>A self-sufficient indoor farming grid for small apartments, built for people with no gardening experience: removable pods that wick water by capillary action, with no pump. I helped design the pods, then laser-cut and built the physical prototype.</p>
+      <div class="chips"><span class="chip">Prototyping</span><span class="chip">Laser cutting</span><span class="chip">Team of 7</span></div><span class="go">View project <span>→</span></span></div>
+  </div></a>
+</div>
+
+<section class="dark" id="current"><div class="wrap">
+  <div class="stitle"><span class="mono">02</span><h2>Currently working on</h2></div>
+  <div class="now">
+    <div class="panel rv"><span class="status mono">Since Oct 2026</span><h3>Crazyflie drone swarm</h3><span class="role mono">With a professor</span>
+      <div class="strip"><img src="images/drones/crazyflie-lighthouse-deck.jpg" alt="Crazyflie nano-drone with a Lighthouse positioning deck" loading="lazy"><img src="images/drones/crazyflie.jpg" alt="Crazyflie 2.1 nano-drone" loading="lazy"><img src="images/drones/lighthouse-base-station.jpg" alt="Lighthouse base station in a netted flight area" loading="lazy"></div>
+      <p>I’m working with a professor to program a swarm of Crazyflie nano-drones to fly coordinated formations. Each drone tracks its own position in the room with the Lighthouse system, and I program the flights in Python. Where it could lead: a swarm that acts out physics models, such as planetary orbits and a mass-spring system, and responds to a person’s gestures in near real time.</p>
+      <div class="steps"><div><b class="mono">So far</b><span>Calibrated the drones and the Lighthouse positioning system they use to sense where they are; programming them in Python.</span></div><div><b class="mono">Next</b><span>Fly the first formations. Flight videos coming soon.</span></div></div></div>
+    <div class="panel rv"><span class="status mono">Since Spring 2026</span><h3>Motorsports Club (Formula SAE)</h3><span class="role mono">Body Cockpit Safety team · pedal box</span>
+      <p><img class="logo" src="images/logo-motorsports.png" alt="Cooper Union Motorsports logo" loading="lazy"></p>
+      <p>I’m working on the pedal box for the team’s Formula SAE race car, the assembly that holds the driver’s pedals and their master cylinders. I compare my SolidWorks model against the real assembly, update the CAD to match, and help build the parts.</p>
+      <div class="steps"><div><b class="mono">So far</b><span>Modeled the pedal box mount in SolidWorks and built part of the new pedal box.</span></div><div><b class="mono">Now</b><span>Making the master cylinders from the old pedal box work with the new design: mounting them, and solving the fit issues that come up as it all comes together.</span></div></div></div>
   </div>
-</section>
-<section id="shop">
-  <p class="eb">Workshop builds</p>
-  <h2>Built by hand</h2>
-  <div class="proj two">
-    <a class="card c-green" href="shop.html#chair"><div class="media"><img src="images/shop/chair.jpg" alt="Finished cardboard chair with arm supports and a storage shelf under the seat" loading="lazy" decoding="async"><span class="cardtag">Design for accessibility</span></div><div class="body"><p class="kpi"><span><b>Triwall</b> cardboard</span></p><h3>Custom cardboard chair for a preschooler</h3><p>For a child with cerebral palsy, with arm supports, a sliding foot stool and a storage shelf.</p><p class="more">See the build →</p></div></a>
-    <a class="card" href="shop.html#casting" style="--sh:var(--c4)"><div class="media"><img src="images/shop/casting-pour.jpg" alt="Pouring molten metal into a sand mold" loading="lazy" decoding="async"><span class="cardtag">Metal casting</span></div><div class="body"><p class="kpi"><span><b>8.90 kN</b> peak force</span><span><b>1.9%</b> strain at fracture</span></p><h3>Sand casting a dog-bone specimen</h3><p>Sand cast in 6061 aluminum, then tensile tested to failure on an Instron.</p><p class="more">See the build →</p></div></a>
+</div></section>
+
+<div class="light">
+<section id="shop"><div class="wrap">
+  <div class="stitle"><span class="mono">03</span><h2>Workshop builds</h2></div>
+  <div class="tiles">
+    <a class="tile rv" href="shop.html#chair"><div class="ph"><img src="images/shop/chair.jpg" alt="Finished cardboard chair with arm supports and a storage shelf" loading="lazy"></div><span class="mono">Design for accessibility · Triwall cardboard</span><h3>Custom cardboard chair for a preschooler</h3><p>For a child with cerebral palsy, with arm supports, a sliding foot stool and a storage shelf.</p><span class="lnk">See the build →</span></a>
+    <a class="tile rv" href="shop.html#casting"><div class="ph"><img src="images/shop/casting-pour.jpg" alt="Pouring molten metal into a sand mold" loading="lazy"></div><span class="mono">Metal casting · 8.90 kN peak force · 1.9% strain at fracture</span><h3>Sand casting a dog-bone specimen</h3><p>Sand cast in 6061 aluminum, then tensile tested to failure on an Instron.</p><span class="lnk">See the build →</span></a>
   </div>
-  <p style="margin-top:16px"><a href="shop.html">See all builds, with photos and process →</a></p>
-</section>
-<section class="about" id="profile">
-  <p class="eb">Profile</p>
-  <h2>About me</h2>
-  <div>
+</div></section>
+
+<section id="profile"><div class="wrap">
+  <div class="stitle"><span class="mono">04</span><h2>About me</h2></div>
+  <div class="about rv">
+    <img src="images/headshot.jpg" alt="Portrait of Rio Ben-Yehoshua" loading="lazy">
     <div>
       <p>I’m a sophomore studying mechanical engineering at The Cooper Union. I like designing and building systems that actually work: build it, test it, see where it fails, and fix it.</p>
       <p>I’m most interested in controls and mechatronics, where mechanical design meets sensors, motors and code.</p>
       <p>Outside of class, I cook, and I treat a recipe the way I treat a prototype: taste, adjust, and try again until it works. I speak English and Hebrew fluently, and conversational Chinese.</p>
     </div>
   </div>
-</section>
-<section id="skills">
-  <p class="eb">Skills</p>
-  <h2>What I work with</h2>
-  <div class="grid g2">
-    <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><h3>Programming</h3><p>C, Python, Arduino</p><p class="used">Used in <a href="ping-pong.html">Ping Pong</a> (launcher control code) and <a href="load-cell-scale.html">Load Cell Scale</a> (weighing code)</p></div>
-    <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="1"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4"/></svg></span><h3>Electronics</h3><p>DC motor drivers (L298N), MOSFET switching, load cells and the HX711 amplifier, I2C displays, Arduino and ESP32</p><p class="used">Motor control: <a href="ping-pong.html">Ping Pong launcher</a><br>Sensing and display: <a href="load-cell-scale.html">Load Cell Scale</a></p></div>
-    <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><polyline points="3.3 7 12 12 20.7 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg></span><h3>CAD &amp; tools</h3><p>SolidWorks, Autodesk Fusion, Onshape, LaTeX, Excel</p><p class="used">SolidWorks: <a href="#current">Motorsports pedal box mount</a><br>Onshape: <a href="ping-pong.html">Ping Pong hoop</a></p></div>
-    <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.1-2.1z"/></svg></span><h3>Fabrication</h3><p>3D printing, laser cutting, soldering, band saw, table saw; machine shop certified</p><p class="used">3D printing: <a href="ping-pong.html">Ping Pong launcher</a>, <a href="load-cell-scale.html">scale enclosure</a><br>Laser cutting: <a href="ping-pong.html">Ping Pong hoop</a>, <a href="#shop">cardboard chair</a></p></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="stitle"><span class="mono">05</span><h2>Skills</h2></div>
+  <div class="skills rv">
+    <div><h3>Programming</h3><div><div class="tags"><span>C</span><span>Python</span><span>Arduino</span></div><p class="small"><b>Used in:</b> <a href="ping-pong.html">Ping Pong</a> (launcher control code), <a href="load-cell-scale.html">Load Cell Scale</a> (weighing code)</p></div></div>
+    <div><h3>Electronics</h3><div><div class="tags"><span>DC motor drivers (L298N)</span><span>MOSFET switching</span><span>Load cells and the HX711 amplifier</span><span>I2C displays</span><span>Arduino</span><span>ESP32</span></div><p class="small"><b>Used in:</b> <a href="ping-pong.html">Ping Pong launcher</a> (motor control), <a href="load-cell-scale.html">Load Cell Scale</a> (sensing and display)</p></div></div>
+    <div><h3>CAD &amp; tools</h3><div><div class="tags"><span>SolidWorks</span><span>Autodesk Fusion</span><span>Onshape</span><span>LaTeX</span><span>Excel</span></div><p class="small"><b>Used in:</b> <a href="#current">Motorsports pedal box mount</a> (SolidWorks), <a href="ping-pong.html">Ping Pong hoop</a> (Onshape)</p></div></div>
+    <div><h3>Fabrication</h3><div><div class="tags"><span>3D printing</span><span>Laser cutting</span><span>Soldering</span><span>Band saw</span><span>Table saw</span><span>Machine shop certified</span></div><p class="small"><b>Used in:</b> <a href="ping-pong.html">Ping Pong launcher</a> and <a href="load-cell-scale.html">scale enclosure</a> (3D printing), <a href="ping-pong.html">Ping Pong hoop</a> and <a href="shop.html#chair">cardboard chair</a> (laser cutting)</p></div></div>
   </div>
-</section>
-<section id="activities">
-  <p class="eb">Activities</p>
-  <h2>Beyond the classroom</h2>
-  <div class="grid g3">
-    <div class="card" style="--sh:var(--c2)"><span class="ico logo"><img loading="lazy" decoding="async" src="images/logo-asme.png" alt="ASME logo"></span><h3>ASME</h3><span class="role">Sophomore Representative</span><p>I serve as the link between my class and the chapter, coordinating through a class Teams group chat, helping plan chapter events and attending biweekly meetings.</p></div>
-    <div class="card" style="--sh:var(--c3)"><span class="ico logo"><img loading="lazy" decoding="async" src="images/logo-swe.png" alt="Society of Women Engineers logo"></span><h3>Society of Women Engineers</h3><span class="role">Member</span><p>I attend SWE events, which open up opportunities to connect with upperclassmen and professors across engineering.</p></div>
-    <div class="card" style="--sh:var(--c4)"><span class="ico logo flush"><img loading="lazy" decoding="async" src="images/logo-hillel.png" alt="The Cooper Union Hillel logo"></span><h3>Hillel</h3><span class="role">Member</span><p>I take part in weekly meetings centered on Jewish learning.</p></div>
+</div></section>
+
+<section id="activities"><div class="wrap">
+  <div class="stitle"><span class="mono">06</span><h2>Beyond the classroom</h2></div>
+  <div class="rows act rv">
+    <div><img src="images/logo-asme.png" alt="ASME logo" loading="lazy"><div><h3>ASME</h3><span class="mono">Sophomore Representative</span></div><p>I serve as the link between my class and the chapter, coordinating through a class Teams group chat, helping plan chapter events and attending biweekly meetings.</p></div>
+    <div><img src="images/logo-swe.png" alt="Society of Women Engineers logo" loading="lazy"><div><h3>Society of Women Engineers</h3><span class="mono">Member</span></div><p>I attend SWE events, which open up opportunities to connect with upperclassmen and professors across engineering.</p></div>
+    <div><img src="images/logo-hillel.png" alt="The Cooper Union Hillel logo" loading="lazy"><div><h3>Hillel</h3><span class="mono">Member</span></div><p>I take part in weekly meetings centered on Jewish learning.</p></div>
+    <div><img src="images/logo-krav-maga.png" alt="Steve Sohn’s Krav Maga Training Center logo" loading="lazy"><div><h3>Krav Maga</h3><span class="mono">Student and volunteer assistant coach · 2016 to 2025</span></div><p>Trained 9+ years to an advanced rank, then coached students from age 11 to 70, adapting drills for beginners, advanced students and autistic students.</p></div>
   </div>
-  <div class="grid" style="margin-top:16px">
-    <div class="card slim" style="--sh:var(--c1)"><span class="ico logo flush"><img loading="lazy" decoding="async" src="images/logo-krav-maga.png" alt="Steve Sohn’s Krav Maga Training Center logo"></span><div><h3>Krav Maga</h3><span class="role">Student and volunteer assistant coach · 2016 to 2025</span><p>Trained 9+ years to an advanced rank, then coached students from age 11 to 70, adapting drills for beginners, advanced students and autistic students.</p></div></div>
-  </div>
-</section>
-<section id="contact">
-  <h2>Get in touch</h2>
-  <p class="lead-c">I’m based in New York City and looking for a Summer 2027 engineering internship. Email is the fastest way to reach me.</p>
-  <p><a href="mailto:rio.benyehoshua@cooper.edu">rio.benyehoshua@cooper.edu</a> · <a href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a> · <a href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></p>
-</section></div></div>
-<script src="js/site.js?v=4" defer></script>
+</div></section>
+</div>
+
+<section class="contact" id="contact"><div class="wrap rv">
+  <a class="mail" href="mailto:rio.benyehoshua@cooper.edu">rio.benyehoshua@cooper.edu</a>
+  <div class="btns" style="justify-content:center"><a class="btn" href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a><a class="btn solid" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a></div>
+</div></section>
+<script src="js/site.js?v=5" defer></script>
 </body>
 </html>

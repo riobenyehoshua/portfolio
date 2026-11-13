@@ -15,8 +15,17 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
 - Casting text: test and result come from `source/reports/dogbone-tensile-test-2026-11-04` (Instron export). The metal is
   6061 aluminum (confirmed by Rio). Don't compute stress from the width/thickness saved in that file: they were left
   over from another group's specimen (13.39 x 3.1 mm). Ask Rio for the measured cross-section.
-- Each project page has a theme class on `.page` (`t-pingpong` red, `t-scale` blue, `t-plant` green; home is purple).
-  Colors are CSS variables at the top of style.css.
+- Design (redesign went live 2026-11-13): navy on white, Archivo + JetBrains Mono, wide capitals only on the name and
+  section headlines. Each project page has a theme class on `<body>` (`inner p-red` ping pong, `inner p-blue` scale,
+  `inner p-green` PlantPlex; `shop.html` is plain `inner`). Colors are CSS variables on `body` at the top of style.css.
+- Menu (same in all five pages): Home · Projects ▾ (the three projects, each with a one-line description, plus
+  "See all projects") · Current work · Builds · About ▾ (About me, Skills, Beyond the classroom) · Contact · Resume.
+  Rio wants projects clearly labeled as projects; don't fold them into a general "Work" dropdown.
+- Page footer is just the email in large type with LinkedIn and Resume buttons (no "Get in touch" heading).
+  Resume links say "Resume", never "Resume (PDF)".
+- Credit accurately: load cell scale, Rio planned and sketched the enclosure and a teammate did the CAD. PlantPlex,
+  Rio worked out the pod shape with teammates, a teammate drew the panels in CAD, Rio laser-cut and built them;
+  the grid frame was store-bought and assembled.
 - `source/` is gitignored and private: original photos (`source/original-photos`, with a CSV mapping), the reports,
   and the original single-file artifact. Never publish files from it without asking.
 - Resume lives at `files/Rio-Ben-Yehoshua-Resume.pdf` (fixed name; pages link to it). It is public.
@@ -27,7 +36,8 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
   (images via `../../images/`), built to `files/Rio-Ben-Yehoshua-Portfolio.pdf` by `tools\build-pdf.cmd`
   (headless Edge). It repeats site content: when project facts change on the site, update it too, rebuild,
   and check every page still fits (no overflow into the footer).
-- `preview-*.html` in the root are gitignored mockups (e.g. `preview-hero.html`, homepage video idea). Not live.
+- `preview-*.html` in the root are gitignored mockups. `preview-4` to `preview-8` were the redesign and are now
+  superseded by the live pages: edit the live pages, not the mockups.
 - `TODO.md` (gitignored, private) is Rio's checklist of things to add later. Read it at the start of a session;
   when Rio says "later" about something, add it there, and tick items off when they're done.
 
