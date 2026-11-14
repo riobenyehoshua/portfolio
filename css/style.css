@@ -279,6 +279,14 @@ figcaption{font-size:15px;color:var(--mut);margin-top:10px}
 .build .mono{color:var(--k);font-weight:700}
 .build p{font-size:18px}
 .build .chip{color:var(--mut)}
+/* ---- homepage load cell card: the lid opens as you scroll (or hover) ---- */
+.lid{position:relative;display:grid}
+.lid img{grid-area:1/1;width:100%;height:100%}
+.lid .open{opacity:var(--o,0);transform:scale(calc(1.08 - var(--o,0)*.08));object-position:50% 52%;transition:opacity .3s,transform .3s}
+.band:hover .lid .open{opacity:1;transform:scale(1)}
+.lid .hint{position:absolute;left:14px;bottom:14px;background:rgba(14,23,38,.78);color:#fff;font-size:12px;letter-spacing:.06em;padding:6px 12px;border-radius:99px;opacity:calc(1 - var(--o,0)*2.5);transition:opacity .3s;pointer-events:none}
+.band:hover .lid .hint{opacity:0}
+@media(prefers-reduced-motion:reduce){.lid .open{transform:none}}
 @media(max-width:860px){
   .pagehead .grid,.split,.g2,.g3,.vids,.pairs,.pager,.build,.rows.two>div{grid-template-columns:1fr;gap:24px}
   .build.flip .lead{order:0}.facts{grid-template-columns:1fr 1fr}.pager .nx{text-align:left}

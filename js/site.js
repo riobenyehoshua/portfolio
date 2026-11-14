@@ -25,6 +25,12 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.play().catch(function(){});else if(!e.target.paused)e.target.pause()})},{threshold:.35});
   v.forEach(function(x){io.observe(x)})})();
 
+// Homepage load cell card: the photo crossfades from closed to open as the card scrolls up the screen.
+(function(){var l=document.querySelectorAll('.lid');if(!l.length)return;var q=false;
+  function upd(){q=false;var vh=innerHeight;l.forEach(function(el){var t=el.getBoundingClientRect().top;
+    var o=Math.max(0,Math.min(1,(vh*.85-t)/(vh*.45)));el.style.setProperty('--o',o.toFixed(3))})}
+  addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd()})();
+
 // "On this page" bar on project pages: mark the section being read.
 (function(){var as=document.querySelectorAll('.toc a');if(!as.length||!('IntersectionObserver' in window))return;
   var m={};as.forEach(function(a){m[a.getAttribute('href').slice(1)]=a});
