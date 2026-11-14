@@ -282,13 +282,12 @@ figcaption{font-size:15px;color:var(--mut);margin-top:10px}
 /* ---- homepage load cell card: closed photo, then the inside is revealed like a lid lifting ---- */
 .lid{position:relative;display:grid}
 .lid img{grid-area:1/1;width:100%;height:100%}
-.lid .open{object-position:50% 52%;clip-path:inset(100% 0 0 0);transform:scale(1.04);transition:clip-path 1.1s cubic-bezier(.65,0,.35,1),transform 1.4s cubic-bezier(.2,.7,.2,1)}
-.lid.on .open,.band:hover .lid .open{clip-path:inset(0 0 0 0);transform:scale(1)}
-.lid .tag{position:absolute;left:14px;bottom:14px;background:rgba(14,23,38,.8);color:#fff;font-size:12px;letter-spacing:.08em;padding:6px 12px;border-radius:99px;pointer-events:none;transition:opacity .4s}
-.lid .tag.b,.lid.on .tag.a,.band:hover .lid .tag.a{opacity:0}
-.lid.on .tag.b,.band:hover .lid .tag.b{opacity:1}
+.lid .open{object-position:50% 52%;clip-path:inset(calc((1 - var(--o,0))*100%) 0 0 0);transform:scale(calc(1.04 - var(--o,0)*.04))}
+.lid .tag{position:absolute;left:14px;bottom:14px;background:rgba(14,23,38,.8);color:#fff;font-size:12px;letter-spacing:.08em;padding:6px 12px;border-radius:99px;pointer-events:none;transition:opacity .3s}
+.lid .tag.b,.lid.on .tag.a{opacity:0}
+.lid.on .tag.b{opacity:1}
 .band .claim{font-weight:700;border-left:4px solid var(--c);padding-left:14px;margin:0 0 18px}
-@media(prefers-reduced-motion:reduce){.lid .open{transition:clip-path .01s;transform:none}}
+@media(prefers-reduced-motion:reduce){.lid .open{transform:none}}
 @media(max-width:860px){
   .pagehead .grid,.split,.g2,.g3,.vids,.pairs,.pager,.build,.rows.two>div{grid-template-columns:1fr;gap:24px}
   .build.flip .lead{order:0}.facts{grid-template-columns:1fr 1fr}.pager .nx{text-align:left}

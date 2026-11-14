@@ -25,13 +25,12 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.play().catch(function(){});else if(!e.target.paused)e.target.pause()})},{threshold:.35});
   v.forEach(function(x){io.observe(x)})})();
 
-// Homepage load cell card: shows the closed scale, then "opens" once the photo has sat in the middle of the
-// screen for a moment. It closes again when scrolled fully out of view, so it replays.
-(function(){var l=document.querySelectorAll('.lid');if(!l.length||!('IntersectionObserver' in window))return;
-  var mid=new IntersectionObserver(function(es){es.forEach(function(e){var el=e.target;clearTimeout(el._t);
-    if(e.isIntersecting)el._t=setTimeout(function(){el.classList.add('on')},700)})},{rootMargin:'-35% 0px -35% 0px'});
-  var out=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting){clearTimeout(e.target._t);e.target.classList.remove('on')}})});
-  l.forEach(function(el){mid.observe(el);out.observe(el)})})();
+// Homepage load cell card: stays closed until the whole photo is on screen, then scrolling further down
+// lifts the lid (the inside photo wipes up). Scrolling back up closes it. --o goes 0 (closed) to 1 (open).
+(function(){var l=document.querySelectorAll('.lid');if(!l.length)return;var q=false;
+  function upd(){q=false;var vh=innerHeight;l.forEach(function(el){var b=el.getBoundingClientRect().bottom;
+    var o=Math.max(0,Math.min(1,(vh-b)/(vh*.3)));el.style.setProperty('--o',o.toFixed(3));el.classList.toggle('on',o>.5)})}
+  addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd()})();
 
 // "On this page" bar on project pages: mark the section being read.
 (function(){var as=document.querySelectorAll('.toc a');if(!as.length||!('IntersectionObserver' in window))return;
