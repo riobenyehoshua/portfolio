@@ -25,12 +25,16 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.play().catch(function(){});else if(!e.target.paused)e.target.pause()})},{threshold:.35});
   v.forEach(function(x){io.observe(x)})})();
 
-// Homepage load cell card: stays closed until the whole photo is on screen, then scrolling further down
-// lifts the lid (the inside photo wipes up). Scrolling back up closes it. --o goes 0 (closed) to 1 (open).
-(function(){var l=document.querySelectorAll('.lid');if(!l.length)return;var q=false;
-  function upd(){q=false;var vh=innerHeight;l.forEach(function(el){var b=el.getBoundingClientRect().bottom;
-    var o=Math.max(0,Math.min(1,(vh-b)/(vh*.3)));el.style.setProperty('--o',o.toFixed(3));el.classList.toggle('on',o>.5)})}
-  addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd()})();
+// Homepage load cell card: stays closed until the whole photo is on screen. Then scrolling down lifts the lid
+// (the inside photo wipes up), and scrolling up at any point lowers it again the same way.
+// Fully open or closed takes 30% of a screen height of scrolling. --o goes 0 (closed) to 1 (open).
+(function(){var l=[].slice.call(document.querySelectorAll('.lid'));if(!l.length)return;var q=false,y=scrollY;
+  function set(el,o){el._o=o;el.style.setProperty('--o',o.toFixed(3));el.classList.toggle('on',o>.5)}
+  function clamp(o){return Math.max(0,Math.min(1,o))}
+  function upd(){q=false;var vh=innerHeight,dy=scrollY-y;y=scrollY;l.forEach(function(el){var b=el.getBoundingClientRect().bottom;
+    set(el,b>vh?0:clamp(el._o+dy/(vh*.3)))})}
+  l.forEach(function(el){var b=el.getBoundingClientRect().bottom;set(el,clamp((innerHeight-b)/(innerHeight*.3)))});
+  addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(upd)}},{passive:true})})();
 
 // "On this page" bar on project pages: mark the section being read.
 (function(){var as=document.querySelectorAll('.toc a');if(!as.length||!('IntersectionObserver' in window))return;
