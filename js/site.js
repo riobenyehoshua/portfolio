@@ -25,16 +25,19 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.play().catch(function(){});else if(!e.target.paused)e.target.pause()})},{threshold:.35});
   v.forEach(function(x){io.observe(x)})})();
 
-// Homepage load cell card: stays closed until the whole photo is on screen. Then scrolling down lifts the lid
-// (the inside photo wipes up), and scrolling up at any point lowers it again the same way.
-// Fully open or closed takes 30% of a screen height of scrolling. --o goes 0 (closed) to 1 (open).
-(function(){var l=[].slice.call(document.querySelectorAll('.lid'));if(!l.length)return;var q=false,y=scrollY;
-  function set(el,o){el._o=o;el.style.setProperty('--o',o.toFixed(3));el.classList.toggle('on',o>.5)}
-  function clamp(o){return Math.max(0,Math.min(1,o))}
-  function upd(){q=false;var vh=innerHeight,dy=scrollY-y;y=scrollY;l.forEach(function(el){var b=el.getBoundingClientRect().bottom;
-    set(el,b>vh?0:clamp(el._o+dy/(vh*.3)))})}
-  l.forEach(function(el){var b=el.getBoundingClientRect().bottom;set(el,clamp((innerHeight-b)/(innerHeight*.3)))});
-  addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(upd)}},{passive:true})})();
+// Homepage load cell card: stays closed until the whole photo is on screen, then opens (the inside photo
+// wipes up with a soft edge) over the next 30% of a screen height of scrolling. It stays open once scrolled
+// past, and closes only when scrolled back to where it opened. --o goes 0 (closed) to 1 (open); the shown
+// value glides toward the scroll position each frame so the motion is smooth, not jumpy.
+(function(){var l=[].slice.call(document.querySelectorAll('.lid'));if(!l.length)return;var run=false;
+  function target(el){var vh=innerHeight;return Math.max(0,Math.min(1,(vh-el.getBoundingClientRect().bottom)/(vh*.3)))}
+  function set(el,o){el._o=o;el.style.setProperty('--o',o.toFixed(4))}
+  function tick(){var more=false;l.forEach(function(el){var t=target(el),d=t-el._o;
+    if(Math.abs(d)<.002)set(el,t);else{set(el,el._o+d*.14);more=true}});
+    if(more)requestAnimationFrame(tick);else run=false}
+  function kick(){if(!run){run=true;requestAnimationFrame(tick)}}
+  l.forEach(function(el){set(el,target(el))});
+  addEventListener('scroll',kick,{passive:true});addEventListener('resize',kick)})();
 
 // "On this page" bar on project pages: mark the section being read.
 (function(){var as=document.querySelectorAll('.toc a');if(!as.length||!('IntersectionObserver' in window))return;

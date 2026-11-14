@@ -282,10 +282,9 @@ figcaption{font-size:15px;color:var(--mut);margin-top:10px}
 /* ---- homepage load cell card: closed photo, then the inside is revealed like a lid lifting ---- */
 .lid{position:relative;display:grid}
 .lid img{grid-area:1/1;width:100%;height:100%}
-.lid .open{object-position:50% 52%;clip-path:inset(calc((1 - var(--o,0))*100%) 0 0 0);transform:scale(calc(1.04 - var(--o,0)*.04))}
-.lid .tag{position:absolute;left:14px;bottom:14px;background:rgba(14,23,38,.8);color:#fff;font-size:12px;letter-spacing:.08em;padding:6px 12px;border-radius:99px;pointer-events:none;transition:opacity .3s}
-.lid .tag.b,.lid.on .tag.a{opacity:0}
-.lid.on .tag.b{opacity:1}
+.lid .open{object-position:50% 52%;transform:scale(calc(1.04 - var(--o,0)*.04));
+  -webkit-mask-image:linear-gradient(to top,#000 calc(var(--o,0)*130% - 30%),transparent calc(var(--o,0)*130%));
+  mask-image:linear-gradient(to top,#000 calc(var(--o,0)*130% - 30%),transparent calc(var(--o,0)*130%))}
 .band.flip .mcol{order:2}
 .band .claim{font-weight:700;font-size:19px;border-left:4px solid var(--c);padding-left:14px;margin:34px 0 0}
 @media(max-width:860px){.band.flip .mcol{order:0}.band .claim{margin-top:26px}}
