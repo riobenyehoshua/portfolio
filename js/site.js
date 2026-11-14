@@ -30,7 +30,12 @@
 // past, and closes only when scrolled back to where it opened. --o goes 0 (closed) to 1 (open); the shown
 // value glides toward the scroll position each frame so the motion is smooth, not jumpy.
 (function(){var l=[].slice.call(document.querySelectorAll('.lid'));if(!l.length)return;var run=false;
-  function target(el){var vh=innerHeight;return Math.max(0,Math.min(1,(vh-el.getBoundingClientRect().bottom)/(vh*.3)))}
+  // Once fully open, closing follows a later path: it waits until the whole photo is back on screen below the
+  // menu bar (plus a little extra scroll) before it starts, so the open photo can be seen in full on a laptop.
+  function target(el){var vh=innerHeight,r=el.getBoundingClientRect(),c=function(x){return Math.max(0,Math.min(1,x))};
+    var open=c((vh-r.bottom)/(vh*.3)),s=Math.max(vh*.7,72+r.height+vh*.12),close=c((s+vh*.3-r.bottom)/(vh*.3));
+    if(open===1)el._up=true;else if(close===0)el._up=false;
+    return el._up?close:open}
   function set(el,o){el._o=o;el.style.setProperty('--o',o.toFixed(4))}
   function tick(){var more=false;l.forEach(function(el){var t=target(el),d=t-el._o;
     if(Math.abs(d)<.002)set(el,t);else{set(el,el._o+d*.14);more=true}});
