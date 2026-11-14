@@ -15,6 +15,9 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
 - Casting text: test and result come from `source/reports/dogbone-tensile-test-2026-11-04` (Instron export). The metal is
   6061 aluminum (confirmed by Rio). Don't compute stress from the width/thickness saved in that file: they were left
   over from another group's specimen (13.39 x 3.1 mm). Ask Rio for the measured cross-section.
+- Load cell scale: all parts cost under $30 (confirmed by Rio). The bathroom-scale comparison on the site rests on the
+  worst error (38 g, at 3162 g) being smaller than the 0.1 lb (45 g) display step of a typical digital bathroom scale.
+  Don't compare it to kitchen scales (they advertise about ±1 g, far tighter).
 - Design (redesign went live 2026-11-13): navy on white, Archivo + JetBrains Mono, wide capitals only on the name and
   section headlines. Each project page has a theme class on `<body>` (`inner p-red` ping pong, `inner p-blue` scale,
   `inner p-green` PlantPlex; `shop.html` is plain `inner`). Colors are CSS variables on `body` at the top of style.css.
