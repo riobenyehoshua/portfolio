@@ -21,6 +21,8 @@ Live: https://riobenyehoshua.github.io/portfolio/ (GitHub Pages, deploys from `m
 - Design (redesign went live 2026-11-13): navy on white, Archivo + JetBrains Mono, wide capitals only on the name and
   section headlines. Each project page has a theme class on `<body>` (`inner p-red` ping pong, `inner p-blue` scale,
   `inner p-green` PlantPlex; `shop.html` is plain `inner`). Colors are CSS variables on `body` at the top of style.css.
+- Personality touches: cream "masking tape" notes (`.tape`, `.tape.l` for left) on the ping pong and load cell homepage
+  cards and on the PlantPlex "first try vs. final" pod pair (`.vs`). Keep them short, playful and true.
 - Menu (same in all five pages): Home · Projects ▾ (the three projects, each with a one-line description, plus
   "See all projects") · Current work · Builds · About ▾ (About me, Skills, Beyond the classroom) · Contact · Resume.
   Rio wants projects clearly labeled as projects; don't fold them into a general "Work" dropdown.
