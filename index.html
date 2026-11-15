@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap">
-<link rel="stylesheet" href="css/style.css?v=18">
+<link rel="stylesheet" href="css/style.css?v=19">
 </head>
 <body>
 <nav class="nav"><div class="wrap"><a class="brand" href="#top">Rio Ben-Yehoshua</a><button class="navtoggle" type="button" aria-expanded="false">Menu</button><div class="links"><a href="#top">Home</a><div class="dd"><a href="#projects" data-s="projects">Projects ▾</a><div class="menu"><div><a href="ping-pong.html">Ping Pong Recirculation System<small>Autonomous launch-and-catch machine</small></a><a href="load-cell-scale.html">Digital Load Cell Scale<small>Arduino scale built on four load cells</small></a><a href="plantplex.html">PlantPlex<small>Self-watering indoor farming grid</small></a><a class="sep" href="#projects">See all projects →</a></div></div></div><a href="#current">Current work</a><a href="#shop">Builds</a><div class="dd"><a href="#profile" data-s="profile skills activities">About ▾</a><div class="menu sm"><div><a href="#profile">About me</a><a href="#skills">Skills</a><a href="#activities">Beyond the classroom</a></div></div></div><a href="#contact">Contact</a><a class="cta" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a></div></div></nav>
@@ -33,7 +33,7 @@
   <div class="herogrid">
     <div>
       <div class="who"><img src="images/headshot.jpg" alt="Portrait of Rio Ben-Yehoshua"><p class="seek">Seeking a Summer 2027 internship in mechanical design, controls and mechatronics.</p></div>
-      <div class="btns"><a class="btn solid" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a><a class="btn" href="mailto:rio.benyehoshua@cooper.edu">Email</a><a class="btn" href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a></div>
+      <div class="btns"><a class="btn solid" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a><a class="btn" href="mailto:rio.benyehoshua@cooper.edu">Email</a><a class="btn" href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/" target="_blank" rel="noopener">LinkedIn</a></div>
       <div class="pills"><span class="pill">GPA 3.77</span><span class="pill">Dean’s List</span><span class="pill">Scholarship</span></div>
     </div>
     <figure class="heromedia"><a href="ping-pong.html"><video autoplay muted loop playsinline preload="auto" poster="images/pingpong/video-side-view-poster.jpg" src="videos/pingpong-side-view.mp4" aria-label="The ping pong recirculation system running"></video><figcaption>110 passes in 60 s · 1st in class →</figcaption></a></figure>
@@ -44,8 +44,8 @@
   <div class="wrap stitle"><span class="mono">01</span><h2>Projects</h2></div>
 
   <a class="band p-red" id="pingpong" href="ping-pong.html"><div class="wrap">
-    <div class="media"><img src="images/pingpong/hero.jpg" alt="Top-down view of the ping pong launcher system" style="object-position:50% 70%"></div>
-    <div class="rv"><span class="count mono">Spring 2026</span><h3>Ping Pong Recirculation System</h3><div class="stat"><span class="big" data-n="110">110</span><span class="unit">passes in 60 s<br>1st in class (class average: about 13)</span></div>
+    <div class="mcol taped"><div class="media"><img src="images/pingpong/hero.jpg" alt="Top-down view of the ping pong launcher system on the lab floor, surrounded by tools, tape and a laptop" style="object-position:50% 70%"></div><p class="tape">Not staged. We basically lived in the lab.</p></div>
+    <div class="rv"><span class="count mono">Spring 2026</span><h3>Ping Pong Recirculation System</h3><div class="stat"><span class="big" data-n="110">110</span><span class="unit">passes in 60 s<br>1st in class (class average: ~13)</span></div>
       <p>An autonomous machine that launches, catches and reloads six balls with no human touch. I worked on the flywheel launcher and the ball return loop.</p>
       <div class="chips"><span class="chip">Onshape</span><span class="chip">3D printing</span><span class="chip">Laser cutting</span><span class="chip">Arduino</span><span class="chip">Motor control</span></div><span class="go">View project <span>→</span></span></div>
   </div></a>
@@ -103,7 +103,7 @@
 <section id="skills"><div class="wrap">
   <div class="stitle"><span class="mono">05</span><h2>Skills</h2></div>
   <div class="skills rv">
-    <div><h3>Programming</h3><div><ul><li>Python</li><li>Arduino</li></ul><p class="small"><b>Used in:</b> <a href="ping-pong.html">Ping Pong</a> (launcher control code), <a href="load-cell-scale.html">Load Cell Scale</a> (weighing code)</p></div></div>
+    <div><h3>Programming</h3><div><ul><li>Python</li><li>Arduino</li></ul><p class="small"><b>Used in:</b> <a href="#current">Crazyflie drone swarm</a> (Python flight programming), <a href="ping-pong.html">Ping Pong</a> (launcher control code), <a href="load-cell-scale.html">Load Cell Scale</a> (weighing code)</p></div></div>
     <div><h3>Electronics</h3><div><ul><li>DC motor drivers (L298N)</li><li>MOSFET switching</li><li>Load cells + HX711 amplifier</li><li>I2C displays</li><li>Arduino</li><li>ESP32</li></ul><p class="small"><b>Used in:</b> <a href="ping-pong.html">Ping Pong launcher</a> (motor control), <a href="load-cell-scale.html">Load Cell Scale</a> (sensing and display)</p></div></div>
     <div><h3>CAD &amp; tools</h3><div><ul><li>SolidWorks</li><li>Autodesk Fusion</li><li>Onshape</li><li>LaTeX</li><li>Excel</li></ul><p class="small"><b>Used in:</b> <a href="#current">Motorsports pedal box mount</a> (SolidWorks), <a href="ping-pong.html">Ping Pong hoop</a> (Onshape)</p></div></div>
     <div><h3>Fabrication</h3><div><ul><li>3D printing</li><li>Laser cutting</li><li>Soldering</li><li>Band saw</li><li>Table saw</li></ul><p class="small"><b>Used in:</b> <a href="ping-pong.html">Ping Pong launcher</a> (3D printing), <a href="ping-pong.html">Ping Pong hoop</a> and <a href="shop.html#chair">cardboard chair</a> (laser cutting)</p></div></div>
@@ -123,7 +123,7 @@
 
 <section class="contact" id="contact"><div class="wrap rv">
   <a class="mail" href="mailto:rio.benyehoshua@cooper.edu">rio.benyehoshua@cooper.edu</a>
-  <div class="btns" style="justify-content:center"><a class="btn" href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/">LinkedIn</a><a class="btn solid" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a></div>
+  <div class="btns" style="justify-content:center"><a class="btn" href="https://www.linkedin.com/in/rio-ben-yehoshua-609740366/" target="_blank" rel="noopener">LinkedIn</a><a class="btn solid" href="files/Rio-Ben-Yehoshua-Resume.pdf" target="_blank" rel="noopener">Resume</a></div>
 </div></section>
 <script src="js/site.js?v=11" defer></script>
 </body>
