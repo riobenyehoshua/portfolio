@@ -30,7 +30,7 @@ h1,h2,h3{margin:0;font-weight:800;font-stretch:125%;text-transform:uppercase;lin
 .hero h1::after{content:"";display:block;width:96px;height:8px;background:var(--k);margin-top:22px}
 .herogrid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
 .who{display:flex;gap:18px;align-items:center;margin-bottom:18px}
-.who img{width:108px;height:108px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}
+.who img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}
 .lede{font-size:21px;margin:0;font-weight:500}
 .seek{background:var(--ink);color:#fff;padding:14px 18px;border-radius:14px;display:flex;gap:12px;align-items:baseline;font-weight:600}
 @keyframes pulse{50%{opacity:.35}}
@@ -177,6 +177,7 @@ h1,h2,h3{margin:0;font-weight:800;font-stretch:125%;text-transform:uppercase;lin
 .heromedia video{aspect-ratio:16/9}
 @media(min-width:861px){.herobox{padding:36px 52px 46px}}
 @media(max-width:860px){.hero h1{font-size:7.6vw}.hero h1 em{display:block}.who{align-items:flex-start}}
+@media(max-width:560px){.who img{width:120px;height:120px}}
 /* ---- menu: longer names, so it folds into the Menu button earlier ---- */
 .nav .links{gap:20px}.nav a{font-size:14.5px}
 @media(max-width:1180px){
