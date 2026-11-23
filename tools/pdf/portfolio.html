@@ -173,7 +173,7 @@ figure{margin:0}figcaption{font-size:7.5pt;color:var(--mut);margin-top:3px}
         <p class="sec">Test results (ten known masses)</p>
         <table class="tbl"><tr><th>Actual (g)</th><th>Scale (g)</th><th>Error</th></tr>
           <tr><td>4</td><td>3.9</td><td>2.50%</td></tr><tr><td>44</td><td>43.2</td><td>1.82%</td></tr><tr><td>234</td><td>234.1</td><td>0.04%</td></tr><tr><td>280</td><td>279.8</td><td>0.07%</td></tr><tr><td>454</td><td>463.1</td><td>2.00%</td></tr><tr><td>910</td><td>926.9</td><td>1.86%</td></tr><tr><td>1362</td><td>1351.2</td><td>0.79%</td></tr><tr><td>2252</td><td>2246.7</td><td>0.24%</td></tr><tr><td>3162</td><td>3200</td><td>1.20%</td></tr><tr><td>4526</td><td>4526.7</td><td>0.02%</td></tr></table>
-        <p style="font-size:8.6pt;margin-top:6px;color:var(--mut)">Max tested load 4535.9 g (10 lb), capped to protect the printed platform. Percent error is largest at small masses, as expected.</p>
+        <p style="font-size:8.6pt;margin-top:6px;color:var(--mut)">Load limit 4535.9 g (10 lb), set to protect the printed platform; heaviest test mass 4526 g. Percent error is largest at small masses, as expected.</p>
       </div>
     </div>
     <div class="box"><p><b>If I rebuilt it:</b> replace the blocking delays in the button code with non-blocking timing so the display never pauses, and track down the slow reading drift (likely signal interference or load cell sensitivity).</p></div>
